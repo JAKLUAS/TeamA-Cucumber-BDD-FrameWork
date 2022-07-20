@@ -11,7 +11,9 @@ Feature: User sing up feature
     When I should click on mortgage application
     Then I need to fill preapproval details
     And I should push next button
-
+    When I am on the personal information page
+    And I need fill out the personal information
+    Then I should click on next the button
 
 
 
