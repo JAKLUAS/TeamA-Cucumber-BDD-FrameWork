@@ -13,7 +13,7 @@ public class VafaEmploymentStepDefs {
     @Given("User on the employment and income page")
     public void user_on_the_employment_and_income_page() {
         VafaPage vp = new VafaPage();
-        vp.verifyEmploymentPage();
+        vp.verifyEmploymentPage.click();
     }
 
 
@@ -21,30 +21,20 @@ public class VafaEmploymentStepDefs {
     public void user_enters_all_the_necessary_information() {
         VafaPage vp = new VafaPage();
         SeleniumUtils.scroll(0, 300);
-        vp.enterEmployerName();
-        vp.enterEmployerPosition();
-        vp.enterCity();
-        vp.enterGrossMonthlyIncome();
-        vp.enterMonthlyOvertime();
-        vp.enterMonthlyBonuses();
-        vp.enterMonthlyCommissions();
-        vp.enterMonthlyDividends();
-
-//        vp.enterEmployerName.sendKeys("John Doe", Keys.ENTER);
-//        vp.enterEmployerPosition.sendKeys("Director", Keys.ENTER);
-//        vp.enterCity.sendKeys("Homer", Keys.ENTER);
-//        vp.enterGrossMonthlyIncome.sendKeys("100000", Keys.ENTER);
-//        vp.enterMonthlyOvertime.sendKeys("5000", Keys.ENTER);
-//        vp.enterMonthlyBonuses.sendKeys("2000", Keys.ENTER);
-//        vp.enterMonthlyCommissions.sendKeys("2550", Keys.ENTER);
-//        vp.enterMonthlyDividends.sendKeys("3240", Keys.ENTER);
+        vp.enterEmployerName.sendKeys("John Doe", Keys.ENTER);
+        vp.enterEmployerPosition.sendKeys("Director", Keys.ENTER);
+        vp.enterCity.sendKeys("Homer", Keys.ENTER);
+        vp.enterGrossMonthlyIncome.sendKeys("100000", Keys.ENTER);
+        vp.enterMonthlyOvertime.sendKeys("5000", Keys.ENTER);
+        vp.enterMonthlyBonuses.sendKeys("2000", Keys.ENTER);
+        vp.enterMonthlyCommissions.sendKeys("2550", Keys.ENTER);
+        vp.enterMonthlyDividends.sendKeys("3240", Keys.ENTER);
     }
-
 
 
     @Then("the user should be able to click on next button")
     public void the_user_should_be_able_to_click_on_next_button() {
         VafaPage vp = new VafaPage();
-        vp.clickNext();
+        vp.clickNext.click();
     }
 }
