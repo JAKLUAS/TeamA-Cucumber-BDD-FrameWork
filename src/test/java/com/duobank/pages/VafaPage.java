@@ -1,9 +1,12 @@
 package com.duobank.pages;
 
 import com.duobank.utilities.Driver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 public class VafaPage {
 
@@ -39,6 +42,46 @@ public class VafaPage {
 
     @FindBy(xpath = "//a[@href='#next']")
     public WebElement clickNext;
+
+    @FindBy(xpath = "//button[@id='addemployer']")
+    public WebElement clickAnotherEmployer;
+
+    @FindBy(xpath = "//input[@id='start_date2']")
+    public WebElement clickStartDate;
+
+    @FindBy(xpath = "//input[@id='end_date2']")
+    public WebElement clickEndDate;
+
+    @FindBy(id = "employername2")
+    public WebElement clickSecondEmployerID;
+
+    @FindBy(id = "position2")
+    public WebElement clickSecondEmployerPosition;
+
+    @FindBy(id = "city2")
+    public WebElement clickSecondCity;
+
+   @FindBy(id = "currentjobsls")
+   public WebElement clickThisIsMyCurrentJob;
+
+    @FindBy(id = "start_date1")
+    public WebElement clickOnStartDate1;
+
+    @FindBy(id = "start_date1")
+    public WebElement clickOnSelectOne;
+
+   @FindBy(id = "Alimnoy/Child Support")
+   public WebElement clickOnAlimnoy;
+
+    @FindBy(id = "amount1")
+    public WebElement addFirstAmount;
+
+    @FindBy(id = "amount2")
+    public WebElement addSecondAmount;
+
+
+    @FindBy(id = "amount3")
+    public WebElement addThirdAmount;
 
 }
 
