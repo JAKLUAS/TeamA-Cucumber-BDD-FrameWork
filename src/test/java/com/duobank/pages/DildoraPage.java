@@ -9,78 +9,91 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class DildoraPage {
 
 
-    Faker faker = new Faker();
-    public void verifyPersonalPage(){
-        SeleniumUtils.waitFor(3);
-        Assert.assertEquals(Driver.getDriver().findElement(By.xpath("(//h6[@class='py-50'])[1]")).getText(),"Personal Information");
+        public DildoraPage(){
+            PageFactory.initElements(Driver.getDriver(), this);
+        }
 
-    }
+   @FindBy(xpath = "(//h6[@class='py-50'])[1]")
+   public WebElement PersonalPageMessage;
 
-    public void clickOnFirstName(){
+    @FindBy(xpath = "(//label[.='Yes'])[3]")
+    public WebElement applyCoBorrowers;
 
-        Driver.getDriver().findElement(By.xpath("//input[@id='b_firstName']")).sendKeys(Keys.ENTER+faker.name().firstName());
-    }
+    @FindBy(xpath = "//input[@id='b_firstName']")
+    public WebElement enterFirstName;
 
-    public void clickOnMiddleName(){
-        Driver.getDriver().findElement(By.xpath("//input[@id='b_middleName']")).sendKeys(Keys.ENTER+faker.name().nameWithMiddle());
-    }
+    @FindBy(xpath = "//input[@id='b_middleName']")
+    public WebElement enterMiddleName;
 
-    public void clickOnLastName(){
-       Driver.getDriver().findElement(By.xpath("//input[@id='b_lastName']")).sendKeys(Keys.ENTER+faker.name().lastName());
-    }
+    @FindBy(xpath = "//input[@id='b_lastName']")
+    public WebElement enterLastName;
 
-    public void selectSuffix(){
-     Driver.getDriver().findElement(By.xpath("//span[@id='select2-b_suffix-container']")).click();
-    }
+    @FindBy(xpath = "//span[@id='select2-b_suffix-container']")
+    public WebElement clickSuffix;
 
-    public void enterSuffix(){
-        SeleniumUtils.waitFor(2);
-        Driver.getDriver().findElement(By.xpath("//input[@class='select2-search__field']")).sendKeys(faker.name().suffix()+Keys.ENTER);
-    }
+    @FindBy(xpath = "//input[@class='select2-search__field']")
+    public WebElement enterSuffix;
 
-    public void enterEmail(){
-        Driver.getDriver().findElement(By.xpath("//input[@id='b_email']")).sendKeys(Keys.ENTER+faker.internet().emailAddress());
+    @FindBy(xpath = "//input[@id='b_email']")
+    public WebElement enterEmailAddress;
 
-    }
+    @FindBy(xpath = "//input[@id='b_dob']")
+    public WebElement enterDOB;
 
-    public void selectDateOfBirth(){
-        Actions action = new Actions(Driver.getDriver());
-        WebElement element = Driver.getDriver().findElement(By.xpath("//input[@id='b_dob']"));
-        action.moveToElement(element).click().perform();
-        element.sendKeys("11"+"25"+ "1989");
+    @FindBy(xpath = "//span[@id='select2-b_marital-container']")
+    public WebElement clickMaritalStatus;
 
-    }
+    @FindBy(xpath = "//input[@type='search']")
+    public WebElement enterMaritalStatus;
 
-    public void enterSSN(){
-      Driver.getDriver().findElement(By.xpath("//input[@id='b_ssn']")).sendKeys(Keys.ENTER+faker.number().digits(9));
-    }
+    @FindBy(xpath = "//input[@id='b_cell']")
+    public WebElement enterCellPhone;
 
-   public void selectMaritalStatus(){
-      Driver.getDriver().findElement(By.xpath("//span[@id='select2-b_marital-container']")).click();}
+    @FindBy(xpath ="//input[@id='b_ssn']" )
+    public WebElement enterSSN;
 
-    public void enterMaritalStatus(){
-        SeleniumUtils.waitFor(2);
+    @FindBy(xpath = "//input[@id='b_home']" )
+    public WebElement enterHomePhone;
 
-        Driver.getDriver().findElement(By.xpath("//input[@type='search']")).sendKeys("Married"+Keys.ENTER);
-    }
+    @FindBy(xpath = "//input[@id='c_firstName']" )
+    public WebElement coBorrowerFirstName;
 
-    public void enterCellPhone(){
+    @FindBy(xpath = "//input[@id='c_middleName']")
+    public WebElement coBorrowerMiddleName;
 
-        Driver.getDriver().findElement(By.xpath("//input[@id='b_cell']")).sendKeys(Keys.ENTER+ faker.phoneNumber().cellPhone());
-    }
-    public void enterHomePhone(){
-        Driver.getDriver().findElement(By.xpath("//input[@id='b_home']")).sendKeys(Keys.ENTER+faker.phoneNumber().phoneNumber());
+    @FindBy(xpath = "//input[@id='c_lastName']")
+    public WebElement coBorrowerLastName;
 
-    }
-    public void checkPrivacyPolice(){
+    @FindBy(xpath = "//input[@id='c_email']")
+    public WebElement coBorrowerEmailAddress;
 
-    }
-    public void clickNextButton(){
-     Driver.getDriver().findElement(By.xpath("//a[.='Next']")).click();
-    }
+    @FindBy(xpath = "//input[@id='c_dob']")
+    public WebElement coBorrowerDOB;
+
+    @FindBy(xpath = "//input[@id='c_ssn']")
+    public  WebElement coBorrowerSSN;
+
+    @FindBy(xpath = "//span[@id='select2-c_marital-container']")
+    public  WebElement clickCoBorrowerMaritalStatus;
+
+    @FindBy(xpath = "//input[@type='search']")
+    public WebElement enterCoBorrowerMaritalStatus;
+
+    @FindBy(xpath = "//input[@id='c_cell']")
+    public  WebElement coBorrowerCellPhone;
+
+    @FindBy(xpath = "//input[@id='c_home']")
+    public  WebElement coBorrowerHomePhone;
+
+    @FindBy(xpath = "//a[.='Next']")
+    public  WebElement clickNextButton;
+
+    @FindBy(xpath = "//label[.='This field is required.']")
+    public WebElement errorMessage;
 }

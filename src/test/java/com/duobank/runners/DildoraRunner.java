@@ -5,8 +5,8 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
-
-
+        // tags = "@smoke",
+        tags = "@parametrized",
         features = "src/test/resources/DildoraSprint_4.feature", // copy the path from the content root ,path to the folder where features files are located
         glue = "com/duobank/stepDefintions",//copy the path from the source root
         stepNotifications = true,
@@ -16,9 +16,12 @@ import org.junit.runner.RunWith;
 
         }
 
-        //    ,dryRun = true
+         //   ,dryRun = true
 )
 public class DildoraRunner {
 
 
 }
+
+
+
