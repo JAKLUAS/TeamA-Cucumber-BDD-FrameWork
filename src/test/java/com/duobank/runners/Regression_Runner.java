@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
     @RunWith(Cucumber.class)
     @CucumberOptions(
 
-            tags ="@smoke and @regression",
+            tags =" @regression",
             features = "src/test/resources",
             glue = "com/duobank/stepDefintions",
             stepNotifications = true,
@@ -19,7 +19,7 @@ import org.junit.runner.RunWith;
 
 //             ,dryRun = true
     )
-    public class Regression_smokeRunner {
+    public class Regression_Runner {
     }
 
 
