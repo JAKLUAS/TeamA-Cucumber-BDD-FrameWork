@@ -7,9 +7,9 @@ import org.junit.runner.RunWith;
     @RunWith(Cucumber.class)
     @CucumberOptions(
 
-
-            features = "src/test/resources/AsifSprint4.feature", // copy the path from the content root ,path to the folder where features files are located
-            glue = "com/duobank/stepDefintions",//copy the path from the source root
+            tags ="@smoke and @regression",
+            features = "src/test/resources",
+            glue = "com/duobank/stepDefintions",
             stepNotifications = true,
             plugin = {
                     "pretty",
@@ -19,7 +19,7 @@ import org.junit.runner.RunWith;
 
 //             ,dryRun = true
     )
-    public class AsifRunner {
+    public class Regression_smokeRunner {
     }
 
 

@@ -1,4 +1,4 @@
-@Regression
+@regression
 Feature: User sign in feature
   as a registered user i should be able to sign in
 
@@ -6,6 +6,7 @@ Feature: User sign in feature
  Background:
     Given I am on the home page
     When I enter valid credentials.
+
    When i click o Application list
 
 
