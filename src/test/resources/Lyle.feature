@@ -1,4 +1,4 @@
-@regrestion
+@regression
 
 Feature: User sing up feature
   as an unregister user i should be able to sing up using singup page
@@ -17,6 +17,6 @@ Feature: User sing up feature
     And I need fill out the personal information
     Then I should click on next the button
 
-    Given I am on the Expenses section
-    When I enter monthly rental payment
+    When I am on the Expenses section
+    And I enter monthly rental payment
     Then I should click on the next button
