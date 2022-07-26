@@ -1,4 +1,4 @@
-
+@regression
 
 Feature: Navigating to Expenses section and entering monthly rental amount in order to proceed to the next section
             & Navigating to Summary section to finish application process
@@ -23,7 +23,7 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
     And I enter monthly rental payment
     Then I should click on the next button
 
-  @smoke @regression
+  @smoke
   Scenario: User should be able to navigate to Summary section and apply successfully
 
     When I am on the Expenses section
