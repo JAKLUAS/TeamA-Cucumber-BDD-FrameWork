@@ -90,3 +90,4 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
     When I am on the Summary section
     And I click on edit eConsent and change to Disagree
     Then I should be able to apply successfully
+
