@@ -30,7 +30,7 @@ public class RahimsPage {
         @FindBy(xpath = "//input[@ID='eConsentdeclarerEmail']")
         public WebElement inputEmail;
 
-        @FindBy(xpath = "//input[@id='agree']")
+        @FindBy(xpath = "//label[@for='agree']")
         public WebElement consentAgree;
 
         @FindBy(xpath = "//input[@id='dontagree']")
