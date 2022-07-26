@@ -27,7 +27,7 @@ public class DildoraStepDefs {
         DildoraPage dildoraPage = new DildoraPage();
         Faker faker = new Faker();
         dildoraPage.enterFirstName.sendKeys(Keys.ENTER+faker.name().firstName());
-        dildoraPage.enterMiddleName.sendKeys(Keys.ENTER+faker.name().nameWithMiddle());
+        dildoraPage.enterMiddleName.sendKeys(Keys.ENTER+faker.name().lastName());
         dildoraPage.enterLastName.sendKeys(Keys.ENTER+faker.name().lastName());
         dildoraPage.clickSuffix.click();
         SeleniumUtils.waitFor(2);
