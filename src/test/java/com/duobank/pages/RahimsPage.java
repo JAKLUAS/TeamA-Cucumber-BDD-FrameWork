@@ -21,7 +21,6 @@ public class RahimsPage {
         @FindBy(xpath = "//a[@href='#next']")
         public WebElement clickNext;
 
-
         @FindBy(xpath = "//input[@ID='eConsentdeclarerFirstName']")
         public WebElement inputFirstName;
 
@@ -52,9 +51,9 @@ public class RahimsPage {
         @FindBy(xpath = "//ul[@role='tablist']//li[@class='done'][5]")
         public WebElement checkIfConsentDone;
 
-
         @FindBy(xpath = "//label[@id='eConsentdeclarerEmail-error']")
         public WebElement checkForError;
+
 
 
 

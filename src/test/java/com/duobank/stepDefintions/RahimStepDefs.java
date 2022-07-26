@@ -67,17 +67,20 @@ public class RahimStepDefs {
         rr.clickNext.click();
         Assert.assertEquals(rr.checkForError.getText(),"Please enter a valid email address.");
 
+
     }
 
     @When("I input correct information and click Agree")
     public void iInputCorrectInformationAndClickAgree() {
         RahimsPage rr = new RahimsPage();
-        SeleniumUtils.waitFor(3);
+
         Faker fakeInfo = new Faker();
         rr.inputFirstName.sendKeys(Keys.ENTER+fakeInfo.name().firstName());
         rr.inputLastName.sendKeys(Keys.ENTER+fakeInfo.name().lastName());
         rr.inputEmail.sendKeys(Keys.ENTER+fakeInfo.internet().emailAddress());
         rr.consentAgree.click();
+
+
     }
 
     @Then("I should be able to click next button")
@@ -86,9 +89,7 @@ public class RahimStepDefs {
         SeleniumUtils.waitFor(3);
         assert rr.checkIfConsentDone.getAttribute("class").equals("done");
 
+
     }
-
-
-
 
 }
