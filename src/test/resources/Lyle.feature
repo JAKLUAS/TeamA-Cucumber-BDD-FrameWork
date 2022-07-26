@@ -9,9 +9,6 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
     When I enter valid credentials.
     Then I should be able to sing in successfully
 
-
-  Scenario: User should be able to navigate to Expenses section and enter rental payment
-
     When I should click on mortgage application
     Then I need to fill preapproval details
     And I should push next button
@@ -19,6 +16,8 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
     When I am on the personal information page
     And I need fill out the personal information
     Then I should click on next the button
+
+  Scenario: User should be able to navigate to Expenses section and enter rental payment
 
     When I am on the Expenses section
     And I enter monthly rental payment
@@ -26,14 +25,6 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
 
   @smoke @regression
   Scenario: User should be able to navigate to Summary section and apply successfully
-
-    When I should click on mortgage application
-    Then I need to fill preapproval details
-    And I should push next button
-
-    When I am on the personal information page
-    And I need fill out the personal information
-    Then I should click on next the button
 
     When I am on the Expenses section
     And I enter monthly rental payment
@@ -58,14 +49,6 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
   @smoke
   Scenario: User should be able to navigate to Summary section and Edit Expenses
 
-    When I should click on mortgage application
-    Then I need to fill preapproval details
-    And I should push next button
-
-    When I am on the personal information page
-    And I need fill out the personal information
-    Then I should click on next the button
-
     When I am on the Expenses section
     And I enter monthly rental payment
     Then I should click on the next button
@@ -87,14 +70,6 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
     Then I should be able to apply successfully
 
   Scenario: User should be able to navigate to Summary section and Edit eConsent
-
-    When I should click on mortgage application
-    Then I need to fill preapproval details
-    And I should push next button
-
-    When I am on the personal information page
-    And I need fill out the personal information
-    Then I should click on next the button
 
     When I am on the Expenses section
     And I enter monthly rental payment
