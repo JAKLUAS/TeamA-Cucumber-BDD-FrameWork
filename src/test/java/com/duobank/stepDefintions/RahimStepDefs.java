@@ -22,6 +22,7 @@ public class RahimStepDefs {
     @When("I click yes to order credit report")
     public void I_click_yes_to_order_credit_report() {
         RahimsPage rr = new RahimsPage();
+        SeleniumUtils.waitFor(3);
         rr.clickYesCreditReport.click();
     }
 
