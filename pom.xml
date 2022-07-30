@@ -53,6 +53,15 @@
         </dependency>
 
 
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.23.1</version>
+            <scope>test</scope>
+        </dependency>
+
+
+
     </dependencies>
 
     <build>
@@ -64,8 +73,24 @@
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
                     <includes>
+
                         <include>**/*CucumberRunner.java</include>
+                        <include>**/*FailedScenariosRunner.java</include>
+
+
+                        <!--                    when running multiple classes, the class name can be passed thru cmd using the placeholder  -->
+                        <!--                        <include>${className}</include>-->
+
+
+
                     </includes>
+
+                    <!--                       These 2 options have to added when running tests in parallel -->
+                    <!--                    <parallel>methods</parallel>-->
+                    <!--                    <useUnlimitedThreads>true</useUnlimitedThreads>-->
+
+
+
                 </configuration>
             </plugin>
             <plugin>

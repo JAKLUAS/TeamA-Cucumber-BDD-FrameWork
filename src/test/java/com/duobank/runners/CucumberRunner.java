@@ -15,7 +15,8 @@ import org.junit.runner.RunWith;
          plugin = {
                 "pretty",
                  "html:target/built-in-report/cucmber-html-report.html",
-                 "json:target/cucumber.json"
+                 "json:target/cucumber.json",
+                 "rerun:target/failedScenarios.txt"
 
          }
 
