@@ -12,6 +12,10 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class DildoraStepDefs {
 
     @When("I am on the personal information page")
@@ -219,6 +223,104 @@ public class DildoraStepDefs {
         dildoraPage.enterLastName.click();
     }
 
+
+
+
+
+    @When("I pass this information as a list of maps")
+    public void i_pass_this_information_as_a_list_of_maps(List<Map<String, String>> informTable) {
+        DildoraPage dildoraPage = new DildoraPage();
+        Map<String,String> map = informTable.get(0);
+        dildoraPage.enterFirstName.sendKeys(Keys.ENTER+map.get("firstName"));
+        dildoraPage.enterMiddleName.sendKeys(Keys.ENTER+map.get("middleName"));
+        dildoraPage.enterLastName.sendKeys(Keys.ENTER+map.get("lastName"));
+        dildoraPage.clickSuffix.click();
+        SeleniumUtils.waitFor(2);
+        dildoraPage.enterSuffix.sendKeys("Jr"+ Keys.ENTER);
+        dildoraPage.enterEmailAddress.sendKeys(Keys.ENTER+map.get("email"));
+        dildoraPage.enterSSN.sendKeys(Keys.ENTER+map.get("SSN"));
+        Actions action = new Actions(Driver.getDriver());
+        WebElement element = Driver.getDriver().findElement(By.xpath("//input[@id='b_dob']"));
+        action.moveToElement(element).click().perform();
+        element.sendKeys(map.get("dateOfBirth"));
+        dildoraPage.clickMaritalStatus.click();
+        SeleniumUtils.waitFor(2);
+        dildoraPage.enterMaritalStatus.sendKeys(map.get("maritalStatus")+Keys.ENTER);
+        dildoraPage.enterCellPhone.sendKeys(Keys.ENTER+map.get("cellPhone"));
+        dildoraPage.enterHomePhone.sendKeys(Keys.ENTER+map.get("homePhone"));
+
+
+    }
+
+
+
+
+    @Then("a pass this information as a map")
+    public void a_pass_this_information_as_a_map(Map<String,String>  informTable) {
+        DildoraPage dildoraPage = new DildoraPage();
+        dildoraPage.enterFirstName.sendKeys(Keys.ENTER+informTable.get("firstName"));
+        dildoraPage.enterMiddleName.sendKeys(Keys.ENTER+informTable.get("middleName"));
+        dildoraPage.enterLastName.sendKeys(Keys.ENTER+informTable.get("lastName"));
+        dildoraPage.clickSuffix.click();
+        SeleniumUtils.waitFor(2);
+        dildoraPage.enterSuffix.sendKeys("Jr"+ Keys.ENTER);
+        dildoraPage.enterEmailAddress.sendKeys(Keys.ENTER+informTable.get("email"));
+        Actions action = new Actions(Driver.getDriver());
+        WebElement element = Driver.getDriver().findElement(By.xpath("//input[@id='b_dob']"));
+        action.moveToElement(element).click().perform();
+        element.sendKeys(informTable.get("dateOfBirth"));
+        dildoraPage.clickMaritalStatus.click();
+        SeleniumUtils.waitFor(2);
+        dildoraPage.enterMaritalStatus.sendKeys(informTable.get("maritalStatus")+Keys.ENTER);
+        dildoraPage.enterCellPhone.sendKeys(Keys.ENTER+informTable.get("cellPhone"));
+
+    }
+
+
+
+
+    @Then("I pass all information as a list of list")
+    public void i_pass_all_information_as_a_list_of_list(List<List<String>> informTable) {
+        List<String > infoRow1 =  informTable.get(1);
+        DildoraPage dildoraPage = new DildoraPage();
+        dildoraPage.enterEmailAddress.sendKeys(Keys.ENTER+infoRow1.get(0));
+        Actions action = new Actions(Driver.getDriver());
+        WebElement element = Driver.getDriver().findElement(By.xpath("//input[@id='b_dob']"));
+        action.moveToElement(element).click().perform();
+        element.sendKeys(infoRow1.get(1));
+        dildoraPage.enterSSN.sendKeys(Keys.ENTER+infoRow1.get(2));
+        dildoraPage.clickMaritalStatus.click();
+        SeleniumUtils.waitFor(2);
+        dildoraPage.enterMaritalStatus.sendKeys(infoRow1.get(3)+Keys.ENTER);
+        dildoraPage.enterCellPhone.sendKeys(Keys.ENTER+infoRow1.get(4));
+        dildoraPage.enterHomePhone.sendKeys(Keys.ENTER+infoRow1.get(5));
+
+    }
+
+
+
+
+    @When("{string} as a DOB , {string} as a email address")
+    public void as_a_dob_as_a_email_address(String DOB, String email) {
+       DildoraPage dildoraPage = new DildoraPage();
+        Actions action = new Actions(Driver.getDriver());
+        WebElement element = Driver.getDriver().findElement(By.xpath("//input[@id='b_dob']"));
+        action.moveToElement(element).click().perform();
+        element.sendKeys(DOB);
+        dildoraPage.enterEmailAddress.sendKeys(Keys.ENTER+email);
+    }
+
+
+    @When("write {string} as a  SSN  {string} as a marital status, {string} as a cell phone")
+    public void write_as_a_ssn_as_a_marital_status_as_a_cell_phone(String SSN, String maritalStatus, String cellPhone) {
+        DildoraPage dildoraPage = new DildoraPage();
+        dildoraPage.enterSSN.sendKeys(Keys.ENTER+SSN);
+        dildoraPage.clickMaritalStatus.click();
+        SeleniumUtils.waitFor(2);
+        dildoraPage.enterMaritalStatus.sendKeys(maritalStatus+Keys.ENTER);
+        dildoraPage.enterCellPhone.sendKeys(Keys.ENTER+cellPhone);
+
+    }
 
 
 }
