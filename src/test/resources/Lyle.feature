@@ -46,7 +46,7 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
     And I click on the save button
     Then I should be able to apply successfully
 
-  @smoke
+
   Scenario: User should be able to navigate to Summary section and Edit Expenses
 
     When I am on the Expenses section
@@ -93,6 +93,7 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
 
 #    //New_Sprint
 
+  @dt
   Scenario: User should be able to navigate to Summary section and Edit PreApproval Details
 
     When I am on the Expenses section
@@ -119,7 +120,7 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
 
     Then I should be able to apply successfully
 
-  @smoke
+  @dt
   Scenario: User should be able to navigate to Summary section and Edit eConsent content
 
     When I am on the Expenses section
@@ -146,7 +147,7 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
 
     Then I should be able to apply successfully
 
-  @datatable
+  @dt
   Scenario: User should be able to navigate to Summary section and Edit Employment and Income
 
     When I am on the Expenses section
@@ -173,7 +174,7 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
 
     Then I should be able to apply successfully
 
-  @scenario_outline_with_datatable
+  @so
   Scenario Outline: User should be able to navigate to Summary section and Edit Personal Information
 
     When I am on the Expenses section
