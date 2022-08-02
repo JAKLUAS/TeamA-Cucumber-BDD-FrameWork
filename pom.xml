@@ -84,16 +84,15 @@
                         <include>**/*FailedScenariosRunner.java</include>
 
 
-                        <!--                    when running multiple classes, the class name can be passed thru cmd using the placeholder  -->
                         <!--                        <include>${className}</include>-->
 
 
 
                     </includes>
 
-                    <!--                       These 2 options have to added when running tests in parallel -->
-                    <!--                    <parallel>methods</parallel>-->
-                    <!--                    <useUnlimitedThreads>true</useUnlimitedThreads>-->
+
+                                        <parallel>methods</parallel>
+                                        <useUnlimitedThreads>true</useUnlimitedThreads>
 
 
 

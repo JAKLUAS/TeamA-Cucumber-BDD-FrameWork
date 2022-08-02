@@ -8,8 +8,10 @@ import org.junit.runner.RunWith;
  @RunWith(Cucumber.class)
  @CucumberOptions(
 
+
          tags ="@dt" ,
         features = "src/test/resources", // copy the path from the content root ,path to the folder where features files are located
+
          glue = "com/duobank/stepDefintions",//copy the path from the source root
          stepNotifications = true,
          plugin = {
@@ -20,7 +22,10 @@ import org.junit.runner.RunWith;
 
          }
 
-//            ,dryRun = true
+
+     //     ,dryRun = true
+
      )
     public class CucumberRunner {
+
   }
