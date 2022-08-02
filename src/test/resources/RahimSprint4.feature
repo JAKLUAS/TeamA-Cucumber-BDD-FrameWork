@@ -115,5 +115,3 @@
       Given I am on the E-consent page
       When I input correct information and click Agree
       Then I should be able to click next button
-
-
