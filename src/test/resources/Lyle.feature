@@ -39,7 +39,7 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
     Then I should be able to click next button
 
     Given I am on the E-consent page
-    When I input correct information and click Agree
+    When I input correct information as list of maps
     Then I should be able to click next button
 
     When I am on the Summary section
@@ -62,7 +62,7 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
     Then I should be able to click next button
 
     Given I am on the E-consent page
-    When I input correct information and click Agree
+    When I input correct information as list of maps
     Then I should be able to click next button
 
     When I am on the Summary section
@@ -84,7 +84,7 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
     Then I should be able to click next button
 
     Given I am on the E-consent page
-    When I input correct information and click Agree
+    When I input correct information as list of maps
     Then I should be able to click next button
 
     When I am on the Summary section
@@ -109,7 +109,7 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
     Then I should be able to click next button
 
     Given I am on the E-consent page
-    When I input correct information and click Agree
+    When I input correct information as list of maps
     Then I should be able to click next button
 
     When I am on the Summary section
@@ -136,7 +136,7 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
     Then I should be able to click next button
 
     Given I am on the E-consent page
-    When I input correct information and click Agree
+    When I input correct information as list of maps
     Then I should be able to click next button
 
     When I am on the Summary section
@@ -163,7 +163,7 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
     Then I should be able to click next button
 
     Given I am on the E-consent page
-    When I input correct information and click Agree
+    When I input correct information as list of maps
     Then I should be able to click next button
 
     When I am on the Summary section
@@ -190,7 +190,7 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
     Then I should be able to click next button
 
     Given I am on the E-consent page
-    When I input correct information and click Agree
+    When I input correct information as list of maps
     Then I should be able to click next button
 
     When I am on the Summary section
