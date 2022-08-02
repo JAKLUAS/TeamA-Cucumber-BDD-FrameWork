@@ -47,9 +47,12 @@ public class AsifPage {
         String Rname = String.valueOf(faker.name());
         String Rphone = String.valueOf(faker.phoneNumber());
 
-        Driver.getDriver().findElement(By.id("realtorinfo")).sendKeys(Rname + Rphone, Keys.ENTER);
+        Driver.getDriver().findElement(By.id("realtorinfo")).sendKeys(Rname + Rphone);
 
     }
+
+    @FindBy(id = "realtorinfo")
+    public WebElement EnterRealtorInfo;
 
     @FindBy(id = "estimatedprice")
     public WebElement EnterNegativeEstimatePrice;

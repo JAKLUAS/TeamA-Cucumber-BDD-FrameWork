@@ -2,13 +2,20 @@ package com.duobank.stepDefintions;
 
 import com.duobank.pages.RahimsPage;
 import com.duobank.pages.VafaPage;
+import com.duobank.utilities.Driver;
 import com.duobank.utilities.SeleniumUtils;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 
 public class RahimStepDefs {
 
@@ -70,19 +77,35 @@ public class RahimStepDefs {
 
 
     }
+    @When("I input incorrect information as list of maps")
+    public void i_input_incorrect_information_as_list_of_maps(List<Map<String,String>> dataTable) {
 
-    @When("I input correct information and click Agree")
-    public void iInputCorrectInformationAndClickAgree() {
+        Map<String,String> map =  dataTable.get(0);
+        System.out.println(dataTable);
         RahimsPage rr = new RahimsPage();
-
-        Faker fakeInfo = new Faker();
-        rr.inputFirstName.sendKeys(Keys.ENTER+fakeInfo.name().firstName());
-        rr.inputLastName.sendKeys(Keys.ENTER+fakeInfo.name().lastName());
-        rr.inputEmail.sendKeys(Keys.ENTER+fakeInfo.internet().emailAddress());
-        rr.consentAgree.click();
-        rr.clickNext.click();
-        rr.clickEconsent.click();
-
+        rr.inputFirstName.sendKeys(map.get("firstName")+ Keys.ENTER);
+        rr.inputLastName.sendKeys(map.get("lastName")+ Keys.ENTER);
+        rr.inputEmail.sendKeys(map.get("e-mail")+ Keys.ENTER);
     }
+
+    @When("I input correct information as list of maps")
+    public void i_input_correct_information_as_list_of_maps(List<Map<String,String>> dataTable) {
+
+        Map<String,String> map =  dataTable.get(0);
+        System.out.println(dataTable);
+        RahimsPage rr = new RahimsPage();
+        rr.inputFirstName.sendKeys(map.get("firstName")+ Keys.ENTER);
+        rr.inputLastName.sendKeys(map.get("lastName")+ Keys.ENTER);
+        rr.inputEmail.sendKeys(map.get("e-mail")+ Keys.ENTER);
+    }
+
+    @Then("I should be able to click Agree")
+    public void i_should_be_able_to_click_agree() {
+
+        RahimsPage rr = new RahimsPage();
+        rr.consentAgree.click();
+    }
+
+
 
 }
