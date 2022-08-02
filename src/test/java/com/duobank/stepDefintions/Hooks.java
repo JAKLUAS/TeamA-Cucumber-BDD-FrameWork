@@ -34,6 +34,6 @@ public class Hooks {
 
 
 
-//        Driver.quitDriver();
+        Driver.quitDriver();
     }
 }
