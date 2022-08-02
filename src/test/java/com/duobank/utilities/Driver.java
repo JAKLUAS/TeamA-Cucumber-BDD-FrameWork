@@ -71,10 +71,10 @@ public class Driver {
     }
 
     public static synchronized void quitDriver(){
-        if(drivers.get() != null){
-            drivers.get().quit();
-            drivers.remove();
-        }
+//        if(drivers.get() != null){
+//            drivers.get().quit();
+//            drivers.remove();
+//        }
 
     }
 

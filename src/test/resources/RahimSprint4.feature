@@ -55,7 +55,7 @@
       When I click No to order credit report
       Then I should be able to click next button
 
-
+    @dt
     Scenario: User should be able to fill out E-consent form using incorrect information for all 3 fields
       Given I am on the home page
       When I enter valid credentials.
@@ -82,11 +82,16 @@
       Then I should be able to click next button
 
       Given I am on the E-consent page
-      When I input incorrect information and click Agree
+      When I input incorrect information as list of maps
+
+        | firstName | lastName | e-mail             |
+        | 1234      | 5678     | rahim123@gmail.com |
+
+      Then I should be able to click Agree
       Then I should not be able to click next button
 
 
-
+    @dt
     Scenario: User should be able to fill out E-consent form using correct information for all 3 fields
       Given I am on the home page
       When I enter valid credentials.
@@ -113,7 +118,12 @@
       Then I should be able to click next button
 
       Given I am on the E-consent page
-      When I input correct information and click Agree
+      When I input correct information as list of maps
+
+        | firstName | lastName | e-mail             |
+        | rahim     | rustamov | rahim123@gmail.com |
+
+      Then I should be able to click Agree
       Then I should be able to click next button
 
 
