@@ -91,6 +91,10 @@
                     </includes>
 
 
+                    <!--                       These 2 options have to added when running tests in parallel -->
+
+
+
                                         <parallel>methods</parallel>
                                         <useUnlimitedThreads>true</useUnlimitedThreads>
 

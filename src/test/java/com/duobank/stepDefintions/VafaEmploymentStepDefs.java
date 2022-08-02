@@ -1,12 +1,13 @@
 package com.duobank.stepDefintions;
-
 import com.duobank.pages.VafaPage;
 import com.duobank.utilities.SeleniumUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
+import java.util.Map;
 
 
 public class VafaEmploymentStepDefs {
@@ -77,11 +78,69 @@ public class VafaEmploymentStepDefs {
         vp.addFirstAmount.sendKeys("2500", Keys.ENTER);
         vp.addSecondAmount.sendKeys("3246", Keys.ENTER);
         vp.addThirdAmount.sendKeys("150", Keys.ENTER);
-
-//            public void AlimnoyDropdown(int index){
-//                Select drop = new Select(vp.clickOnSelectOne);
-//                drop.selectByIndex(1);
-
             }
+
+
+//            Sprint 5
+
+
+    @When("User enters the following credentials")
+    public void user_enters_the_following_credentials(List<List<String>> dataTable) {
+        List<String > employerDetails =  dataTable.get(1);
+        System.out.println(dataTable);
+        new VafaPage().enterCredentialsAndClick(employerDetails.get(0),
+                employerDetails.get(1),
+                employerDetails.get(2),
+                employerDetails.get(3));
+
     }
+
+    @When("user_enters_another_employer_information_with_the_following_credentials")
+    public void user_enters_another_employer_information_with_the_following_credentials(List<List<String>> dataTable) {
+        List<String > secondEmployerDetails =  dataTable.get(1);
+        System.out.println(dataTable);
+        new VafaPage().enterSecondEmployerAndClick(secondEmployerDetails.get(0),
+                secondEmployerDetails.get(1),
+                secondEmployerDetails.get(2),
+                secondEmployerDetails.get(3),
+                secondEmployerDetails.get(4));
+    }
+
+
+    @When("User enters another employer information with the following credentials including the following Gross Monthly Employment Income")
+    public void user_enters_another_employer_information_with_the_following_credentials_including_the_following_gross_monthly_employment_income(List<Map<String, String>> dataTable) {
+        System.out.println(dataTable);
+            Map<String,String> additionalIncome = dataTable.get(0);
+            new VafaPage().enterAdditionalInfoAndClick(additionalIncome.get("Employer Name2"),
+                    additionalIncome.get("Employer Position2"),
+                    additionalIncome.get("City2"),
+                    additionalIncome.get("Start Date2"),
+                    additionalIncome.get("Gross Monthly Income2"),
+                    additionalIncome.get("Monthly Overtime"),
+                    additionalIncome.get("Monthly Bonuses"),
+                    additionalIncome.get("Monthly Commissions"),
+                    additionalIncome.get("Monthly Dividends"));
+
+        }
+
+    @When("User enters another employer information with THREE ADDITIONAL INCOME SOURCES")
+    public void user_enters_another_employer_information_with_three_additional_income_sources(List<Map<String, String>> dataTable) {
+        System.out.println(dataTable);
+        Map<String,String> threeIncomes = dataTable.get(0);
+        new VafaPage().enterAdditionalIncomeAndClick(threeIncomes.get("Employer Name2"),
+                threeIncomes.get("Employer Position2"),
+                threeIncomes.get("City2"),
+                threeIncomes.get("Start Date2"),
+                threeIncomes.get("Gross Monthly Income2"),
+                threeIncomes.get("Additional Gross Monthly Income"));
+    }
+
+    }
+
+
+
+
+
+
+
 
