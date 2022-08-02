@@ -105,7 +105,10 @@ public class VafaPage {
   clickNext.click();
  }
 
- public void enterAdditionalInfoAndClick(String employerName, String employerPosition, String city, String startDate1, String grossMonthlyIncome, String monthlyOvertime, String monthlyBonuses, String monthlyCommissions, String monthlyDividends) {
+ public void enterAdditionalInfoAndClick(String employerName, String employerPosition,
+                                         String city, String startDate1, String grossMonthlyIncome,
+                                         String monthlyOvertime, String monthlyBonuses, String monthlyCommissions,
+                                         String monthlyDividends) {
   clickAnotherEmployer.click();
   clickSecondEmployerID.sendKeys(employerName);
   clickSecondEmployerPosition.sendKeys(employerPosition);
@@ -119,8 +122,9 @@ public class VafaPage {
   clickNext.click();
  }
 
-
- public void enterAdditionalIncomeAndClick(String employerName, String employerPosition, String city, String startDate1, String grossMonthlyIncome, String amount) {
+ public void enterAdditionalIncomeAndClick(String employerName, String employerPosition,
+                                           String city, String startDate1,
+                                           String grossMonthlyIncome, String amount) {
   clickAnotherEmployer.click();
   clickSecondEmployerID.sendKeys(employerName);
   clickSecondEmployerPosition.sendKeys(employerPosition);
