@@ -33,16 +33,17 @@ public class HomePage {
     private WebElement signUpButton;
 
     @FindBy (id = "exampleInputEmail1")
-    private WebElement signINEmail;
+    public WebElement signINEmail;
 
     @FindBy (id = "exampleInputPassword1")
-    private WebElement signINPassword;
+    public WebElement signINPassword;
 
     @FindBy (name = "login")
     private WebElement loginButton;
 
 
     public void clickOnSignUpPageLink(){
+
         signUpPageLink.click();
     }
 
