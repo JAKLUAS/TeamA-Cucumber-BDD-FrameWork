@@ -20,7 +20,7 @@ public class AfaStepDefs {
 
     @Then("I should be able to sign in successfully")
     public void i_should_be_able_to_sign_in_successfully() {
-        Assert.assertEquals("http://qa-duobank.us-east-2.elasticbeanstalk.com/applications.php", Driver.getDriver().getCurrentUrl());
+        Assert.assertEquals("http://qa-duobank.us-east-2.elasticbeanstalk.com/dashboard.php", Driver.getDriver().getCurrentUrl());
     }
 
     @Given("i am on sign in page")

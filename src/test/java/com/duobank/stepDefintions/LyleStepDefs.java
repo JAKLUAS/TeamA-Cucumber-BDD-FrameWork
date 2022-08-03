@@ -1,15 +1,20 @@
 package com.duobank.stepDefintions;
 
+import com.duobank.pages.AsifPage;
 import com.duobank.pages.LylesPage;
 import com.duobank.utilities.Driver;
 import com.duobank.utilities.SeleniumUtils;
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
-public class LyleStepDefs {
+import java.util.List;
+import java.util.Map;
+
+public class LyleStepDefs{
 
     @When("I am on the Expenses section")
     public void i_am_on_the_expenses_section() {
@@ -71,8 +76,90 @@ public class LyleStepDefs {
         expenses.clickNext.click();
         expenses.saveButton.click();
 
-        //commit2
+
+    }
 
 
+    @And("I click on edit PreApproval details")
+    public void iClickOnEditPreApprovalDetails(List<Map<String, String>> dataTable) {
+
+        LylesPage sprint4 = new LylesPage();
+        sprint4.preapprovalEdit.click();
+        SeleniumUtils.waitFor(2);
+
+        Map<String,String> map = dataTable.get(0);
+        new LylesPage().editPreapprovalDetails(map.get("ESTIMATED PURCHASE PRICE"),
+                map.get("DOWN PAYMENT AMOUNT"));
+
+
+        sprint4.clickNext.click();
+        sprint4.clickNext.click();
+        sprint4.clickNext.click();
+        sprint4.clickNext.click();
+        sprint4.clickNext.click();
+        sprint4.clickNext.click();
+        sprint4.saveButton.click();
+
+    }
+
+    @And("I click on edit eConsent and change the name, lastname and email")
+    public void iClickOnEditEConsentAndChangeTheNameLastnameAndEmail(List<List<String>> dataTable) {
+
+        LylesPage sprint4 = new LylesPage();
+        sprint4.eConsentEdit.click();
+        SeleniumUtils.waitFor(2);
+
+        List<String > secondRow =  dataTable.get(1);
+        new LylesPage().editEConsentDetails(secondRow.get(0),
+                secondRow.get(1),
+                secondRow.get(2));
+
+        sprint4.clickNext.click();
+        sprint4.saveButton.click();
+    }
+
+    @And("I click on edit Employment & Income with some details")
+    public void iClickOnEditEmploymentIncomeWithSomeDetails(List<Map<String, String>> dataTable) {
+
+        LylesPage sprint4 = new LylesPage();
+        sprint4.employmentAndIncomeEdit.click();
+        SeleniumUtils.waitFor(4);
+
+        Map<String,String> map = dataTable.get(0);
+        new LylesPage().editEmploymentAndIncome(map.get("Gross Monthly Income"),
+                map.get("Monthly Overtime"),
+                map.get("Monthly Bonuses"),
+                map.get("Monthly Commissions"),
+                map.get("Monthly Dividents"));
+
+        sprint4.clickNext.click();
+        sprint4.clickNext.click();
+        sprint4.clickNext.click();
+        sprint4.saveButton.click();
+    }
+
+    @And("I click on edit Personal Details with necessary information")
+    public void iClickOnEditPersonalDetailsWithNecessaryInformation(List<Map<String, String>> dataTable) {
+
+        LylesPage sprint4 = new LylesPage();
+        sprint4.personalDetailsEdit.click();
+        SeleniumUtils.waitFor(5);
+
+        Map<String,String> map = dataTable.get(0);
+        Faker faker = new Faker();
+
+        new LylesPage().editPersonalDetails(map.get("FirstName"),
+                map.get("MiddleName"),
+                map.get("LastName"));
+
+        sprint4.EmailAddress.sendKeys(Keys.CONTROL, Keys.chord("a"), faker.internet().emailAddress());
+        sprint4.SSN.sendKeys(Keys.CONTROL, Keys.chord("a"), faker.number().digits(9));
+
+        sprint4.clickNext.click();
+        sprint4.clickNext.click();
+        sprint4.clickNext.click();
+        sprint4.clickNext.click();
+        sprint4.clickNext.click();
+        sprint4.saveButton.click();
     }
 }
