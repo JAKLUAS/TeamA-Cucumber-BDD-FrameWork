@@ -14,7 +14,7 @@ import org.openqa.selenium.Keys;
 import java.util.List;
 import java.util.Map;
 
-public class LyleStepDefs {
+public class LyleStepDefs{
 
     @When("I am on the Expenses section")
     public void i_am_on_the_expenses_section() {

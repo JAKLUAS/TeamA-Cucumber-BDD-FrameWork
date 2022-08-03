@@ -1,7 +1,5 @@
-
-
 Feature: Navigating to Expenses section and entering monthly rental amount in order to proceed to the next section
-            & Navigating to Summary section to finish application process
+  & Navigating to Summary section to finish application process
 
   Background:
 
@@ -39,7 +37,7 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
     Then I should be able to click next button
 
     Given I am on the E-consent page
-    When I input correct information as list of maps
+    When I input correct information and click Agree
     Then I should be able to click next button
 
     When I am on the Summary section
@@ -62,7 +60,7 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
     Then I should be able to click next button
 
     Given I am on the E-consent page
-    When I input correct information as list of maps
+    When I input correct information and click Agree
     Then I should be able to click next button
 
     When I am on the Summary section
@@ -84,7 +82,7 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
     Then I should be able to click next button
 
     Given I am on the E-consent page
-    When I input correct information as list of maps
+    When I input correct information and click Agree
     Then I should be able to click next button
 
     When I am on the Summary section
@@ -93,7 +91,7 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
 
 #    //New_Sprint
 
-  @dt
+
   Scenario: User should be able to navigate to Summary section and Edit PreApproval Details
 
     When I am on the Expenses section
@@ -105,22 +103,21 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
     Then the user should be able to click on next button
 
     Given I am on the credit report page
-    When I click yes to order credit report
     Then I should be able to click next button
 
     Given I am on the E-consent page
-    When I input correct information as list of maps
+    When I input correct information and click Agree
     Then I should be able to click next button
 
     When I am on the Summary section
     And I click on edit PreApproval details
 
-    | ESTIMATED PURCHASE PRICE | DOWN PAYMENT AMOUNT |
-    | 350000                   | 90000               |
+      | ESTIMATED PURCHASE PRICE | DOWN PAYMENT AMOUNT |
+      | 350000                   | 90000               |
 
     Then I should be able to apply successfully
 
-  @dt
+
   Scenario: User should be able to navigate to Summary section and Edit eConsent content
 
     When I am on the Expenses section
@@ -132,22 +129,21 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
     Then the user should be able to click on next button
 
     Given I am on the credit report page
-    When I click yes to order credit report
     Then I should be able to click next button
 
     Given I am on the E-consent page
-    When I input correct information as list of maps
+    When I input correct information and click Agree
     Then I should be able to click next button
 
     When I am on the Summary section
     And I click on edit eConsent and change the name, lastname and email
 
-    | firstName | lastName | emailAddress |
-    | Liliya    | Grant    | liliyagrant@gmail.com |
+      | firstName | lastName | emailAddress |
+      | Liliya    | Grant    | liliyagrant@gmail.com |
 
     Then I should be able to apply successfully
 
-  @dt
+
   Scenario: User should be able to navigate to Summary section and Edit Employment and Income
 
     When I am on the Expenses section
@@ -159,11 +155,10 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
     Then the user should be able to click on next button
 
     Given I am on the credit report page
-    When I click yes to order credit report
     Then I should be able to click next button
 
     Given I am on the E-consent page
-    When I input correct information as list of maps
+    When I input correct information and click Agree
     Then I should be able to click next button
 
     When I am on the Summary section
@@ -174,7 +169,7 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
 
     Then I should be able to apply successfully
 
-  @so
+
   Scenario Outline: User should be able to navigate to Summary section and Edit Personal Information
 
     When I am on the Expenses section
@@ -186,11 +181,10 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
     Then the user should be able to click on next button
 
     Given I am on the credit report page
-    When I click yes to order credit report
     Then I should be able to click next button
 
     Given I am on the E-consent page
-    When I input correct information as list of maps
+    When I input correct information and click Agree
     Then I should be able to click next button
 
     When I am on the Summary section
@@ -207,4 +201,3 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
       | Cathy     | Garcia     | Molina   |
       | Fatima    | Lopez      | Brate    |
       | Hannah    | Mejorada   | Donayre  |
-

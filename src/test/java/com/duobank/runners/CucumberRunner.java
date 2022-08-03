@@ -13,7 +13,8 @@ import org.junit.runner.RunWith;
 
 
 
-         tags ="@dt" ,
+//         tags ="@dt or @so",
+         tags = "@crossBrowser",
 
         features = "src/test/resources", // copy the path from the content root ,path to the folder where features files are located
 
