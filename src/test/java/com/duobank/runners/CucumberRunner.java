@@ -9,7 +9,8 @@ import org.junit.runner.RunWith;
  @CucumberOptions(
 
 
-//         tags ="@dt or @so",
+         //tags = "@dt or @so", // for regression
+         //tags ="@parallel",
          tags = "@crossBrowser",
 
         features = "src/test/resources",
@@ -18,7 +19,7 @@ import org.junit.runner.RunWith;
 
          plugin = {
                 "pretty",
-                 "html:target/built-in-report/cucmber-html-report.html",
+                 "html:target/built-in-report/cucumber-html-report.html",
                  "json:target/cucumber.json",
                  "rerun:target/failedScenarios.txt"
 
@@ -26,7 +27,7 @@ import org.junit.runner.RunWith;
 
 
 
-     //     ,dryRun = true
+//         ,dryRun = true
 
 
      )

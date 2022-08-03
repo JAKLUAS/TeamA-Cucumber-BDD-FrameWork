@@ -40,6 +40,7 @@ public class LyleStepDefs{
     @When("I am on the Summary section")
     public void iAmOnTheSummarySection() {
         LylesPage expenses = new LylesPage();
+        expenses.verifySummaryPage.click();
         Assert.assertEquals(expenses.verifySummaryPage.getText(),"SUMMARY");
     }
 
@@ -84,6 +85,8 @@ public class LyleStepDefs{
     public void iClickOnEditPreApprovalDetails(List<Map<String, String>> dataTable) {
 
         LylesPage sprint4 = new LylesPage();
+        SeleniumUtils.scroll(0,-200);
+
         sprint4.preapprovalEdit.click();
         SeleniumUtils.waitFor(2);
 
