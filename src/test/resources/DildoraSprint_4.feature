@@ -54,7 +54,7 @@ Feature: User sing up feature
 
 
 
-   @dt
+  @crossBrowser
    Scenario: Registered user should be able to click on the next button
      When  I pass this information as a list of maps
 
@@ -82,7 +82,7 @@ Feature: User sing up feature
 
 
 
-  @dt
+  @dt @parallel
   Scenario: Registered user should be able see error message
     Then I pass all information as a list of list
       | email             | dateOfBirth | SSN       | maritalStatus | cellPhone  | homePhone  |

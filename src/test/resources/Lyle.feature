@@ -91,7 +91,7 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
 
 #    //New_Sprint
 
-
+  @dt @parallel
   Scenario: User should be able to navigate to Summary section and Edit PreApproval Details
 
     When I am on the Expenses section
@@ -143,7 +143,7 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
 
     Then I should be able to apply successfully
 
-
+  @dt @crossBrowser
   Scenario: User should be able to navigate to Summary section and Edit Employment and Income
 
     When I am on the Expenses section
@@ -169,7 +169,7 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
 
     Then I should be able to apply successfully
 
-
+  @so
   Scenario Outline: User should be able to navigate to Summary section and Edit Personal Information
 
     When I am on the Expenses section

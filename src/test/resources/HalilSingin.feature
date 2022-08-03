@@ -10,7 +10,7 @@ Feature: User sing up feature
 
 
 
-   @dataParametrized
+   @parallel
   Scenario: Registered user signin positive parametrized
     Given I am on the home page
     When  I enter "dykman2@gmail.com" as a username and "dykman2022" as password
@@ -18,7 +18,7 @@ Feature: User sing up feature
 
 
 
-  @dt
+  @so
   Scenario Outline: Registered user signin positive
     Given I am on the home page
     When  I enter "<email>" as a username and "<password>" as password
