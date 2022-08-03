@@ -16,67 +16,58 @@ public class Driver {
 
     private Driver(){}
 
-
-    public static synchronized  WebDriver getDriver(){
-
+    public static synchronized WebDriver getDriver(){
         if(drivers.get() == null ){
-
-            String browser = ConfigReader.getProperty("browser");
-
+            String browser = System.getProperty("browser");
+            if(browser == null){
+                browser = ConfigReader.getProperty("browser");
+            }
             switch (browser){
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
-                    drivers.set(  new ChromeDriver());
+                    drivers.set(new ChromeDriver());
                     break;
                 case "chrome_headless":
-                    ChromeOptions chromeOptions= new ChromeOptions();
-                    chromeOptions.addArguments(("--headless"));
+                    ChromeOptions chromeOptions = new ChromeOptions();
+                    chromeOptions.addArguments("--headless");
                     WebDriverManager.chromedriver().setup();
-                    drivers.set( new ChromeDriver(chromeOptions));
+                    drivers.set(new ChromeDriver(chromeOptions));
                     break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
-                    drivers.set( new FirefoxDriver());
+                    drivers.set(new FirefoxDriver());
                     break;
-
                 case "firefox_headless":
                     FirefoxOptions firefoxOptions = new FirefoxOptions();
                     firefoxOptions.addArguments("--headless");
                     WebDriverManager.firefoxdriver().setup();
-                    drivers.set(  new FirefoxDriver(firefoxOptions));
+                    drivers.set(new FirefoxDriver(firefoxOptions));
                     break;
                 case "edge":
                     WebDriverManager.edgedriver().setup();
-                    drivers.set( new EdgeDriver());
+                    drivers.set(new EdgeDriver());
                     break;
-
                 case "edge_headless":
-                    EdgeOptions edgeOptions = new EdgeOptions();
+                    EdgeOptions edgeOptions =  new EdgeOptions();
                     edgeOptions.addArguments("--headless");
                     WebDriverManager.edgedriver().setup();
-                    drivers.set( new EdgeDriver(edgeOptions));
+                    drivers.set(new EdgeDriver(edgeOptions));
                     break;
                 case "safari":
                     WebDriverManager.safaridriver().setup();
-                    drivers.set( new SafariDriver());
+                    drivers.set(new SafariDriver());
                     break;
                 default:
                     throw new RuntimeException("Invalid browser");
             }
-
         }
-
         return drivers.get();
-
     }
-
     public static synchronized void quitDriver(){
-//        if(drivers.get() != null){
-//            drivers.get().quit();
-//            drivers.remove();
-//        }
-
+        if(drivers.get() != null){
+            drivers.get().quit();
+            drivers.remove();
+        }
     }
-
-
 }
+

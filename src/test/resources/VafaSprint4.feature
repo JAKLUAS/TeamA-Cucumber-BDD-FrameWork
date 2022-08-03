@@ -2,7 +2,8 @@
 
  Feature: User should be able to fill in Employment and Income details feature
 
-   Background:
+
+   Scenario: Registered user singin positive
      Given I am on the home page
      When I enter valid credentials.
      Then I should be able to sing in successfully
@@ -19,9 +20,6 @@
      When I enter monthly rental payment
      Then I should click on the next button
 
-
-   Scenario: Registered user singin positive
-
       Given User on the employment and income page
       When User enters all the necessary information
       Then the user should be able to click on next button
@@ -29,12 +27,44 @@
 
    Scenario:  User should be able to fill in Employment and Income details feature with the second employer information
 
+     Given I am on the home page
+     When I enter valid credentials.
+     Then I should be able to sing in successfully
+
+     When I should click on mortgage application
+     Then I need to fill preapproval details
+     And I should push next button
+
+     When I am on the personal information page
+     And I need fill out the personal information
+     Then I should click on next the button
+
+     Given I am on the Expenses section
+     When I enter monthly rental payment
+     Then I should click on the next button
+
      Given User on the employment and income page
      When User enters another employer information
      Then the user should be able to click on next button
 
 
    Scenario:  User should be able to fill in Employment and Income details adding start date to current job
+
+     Given I am on the home page
+     When I enter valid credentials.
+     Then I should be able to sing in successfully
+
+     When I should click on mortgage application
+     Then I need to fill preapproval details
+     And I should push next button
+
+     When I am on the personal information page
+     And I need fill out the personal information
+     Then I should click on next the button
+
+     Given I am on the Expenses section
+     When I enter monthly rental payment
+     Then I should click on the next button
 
      Given User on the employment and income page
      When User should be able to include start date for current job
@@ -44,6 +74,21 @@
 
    Scenario:  User should be able to fill in Employment and Income details adding Additional Gross Monthly Income
 
+     Given I am on the home page
+     When I enter valid credentials.
+     Then I should be able to sing in successfully
+
+     When I should click on mortgage application
+     Then I need to fill preapproval details
+     And I should push next button
+
+     When I am on the personal information page
+     And I need fill out the personal information
+     Then I should click on next the button
+
+     Given I am on the Expenses section
+     When I enter monthly rental payment
+     Then I should click on the next button
 
      Given User on the employment and income page
      When User enters all the necessary information
@@ -55,6 +100,21 @@
 
    @dt
   Scenario: Registered user singin positive
+     Given I am on the home page
+     When I enter valid credentials.
+     Then I should be able to sing in successfully
+
+     When I should click on mortgage application
+     Then I need to fill preapproval details
+     And I should push next button
+
+     When I am on the personal information page
+     And I need fill out the personal information
+     Then I should click on next the button
+
+     Given I am on the Expenses section
+     When I enter monthly rental payment
+     Then I should click on the next button
 
     Given User on the employment and income page
     When User enters the following credentials
@@ -66,6 +126,22 @@
    @dt
    Scenario:  User should be able to fill in Employment and Income feature with SECOND EMPLOYER INFORMATION AND START DATE
 
+     Given I am on the home page
+     When I enter valid credentials.
+     Then I should be able to sing in successfully
+
+     When I should click on mortgage application
+     Then I need to fill preapproval details
+     And I should push next button
+
+     When I am on the personal information page
+     And I need fill out the personal information
+     Then I should click on next the button
+
+     Given I am on the Expenses section
+     When I enter monthly rental payment
+     Then I should click on the next button
+
      Given User on the employment and income page
      When user_enters_another_employer_information_with_the_following_credentials
        | Employer Name2 | Employer Position2 | City2  | Start Date2 | Gross Monthly Income2 |
@@ -74,8 +150,23 @@
 
 
 
-   @dt
-   Scenario:  User should be able to fill in Employment and Income feature with MONTHLY OVERTIME, BONUSES, COMMISSIONS & DIVIDENDS
+   @so
+   Scenario Outline:  User should be able to fill in Employment and Income feature with MONTHLY OVERTIME, BONUSES, COMMISSIONS & DIVIDENDS
+     Given I am on the home page
+     When I enter valid credentials.
+     Then I should be able to sing in successfully
+
+     When I should click on mortgage application
+     Then I need to fill preapproval details
+     And I should push next button
+
+     When I am on the personal information page
+     And I need fill out the personal information
+     Then I should click on next the button
+
+     Given I am on the Expenses section
+     When I enter monthly rental payment
+     Then I should click on the next button
 
      Given User on the employment and income page
      When User enters another employer information with the following credentials including the following Gross Monthly Employment Income
@@ -92,8 +183,23 @@
        | Ben Stiller    | COO                | Boston | 12.01.1995 | 9876         | 1234     | 30400   | 1500000     | 150000    |
 
 
-@dt
-   Scenario:  User should be able to fill in Employment and Income feature with 3 ADDITIONAL INCOME SOURCES
+   @so @crossBrowser
+   Scenario Outline:  User should be able to fill in Employment and Income feature with 3 ADDITIONAL INCOME SOURCES
+     Given I am on the home page
+     When I enter valid credentials.
+     Then I should be able to sing in successfully
+
+     When I should click on mortgage application
+     Then I need to fill preapproval details
+     And I should push next button
+
+     When I am on the personal information page
+     And I need fill out the personal information
+     Then I should click on next the button
+
+     Given I am on the Expenses section
+     When I enter monthly rental payment
+     Then I should click on the next button
 
      Given User on the employment and income page
      When User enters another employer information with THREE ADDITIONAL INCOME SOURCES

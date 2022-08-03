@@ -18,7 +18,7 @@ Feature: User sing up feature
 
 
 
-  @so
+  @dt
   Scenario Outline: Registered user signin positive
     Given I am on the home page
     When  I enter "<email>" as a username and "<password>" as password

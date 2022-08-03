@@ -113,8 +113,8 @@ public class LylesPage {
 
     public void editPreapprovalDetails(String a, String b) {
 
-        estimatedPurchasePrice.sendKeys(a);
-        downpaymentAmount.sendKeys(b);
+        estimatedPurchasePrice.sendKeys(Keys.CONTROL, Keys.chord("a"),a);
+        downpaymentAmount.sendKeys(Keys.CONTROL, Keys.chord("a"),b);
 
     }
 
@@ -146,7 +146,3 @@ public class LylesPage {
     }
 
 }
-
-
-
-

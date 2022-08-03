@@ -46,7 +46,7 @@ Feature: User sing up feature
     Then I should be able to sing in successfully
 
 
-@dt
+  @dt
   Scenario: Registered user fill Preapproval application, with Realtor, Loan officer and Other Type Payment
 
     When I should click on mortgage application
@@ -56,7 +56,7 @@ Feature: User sing up feature
     And Other Type Payment
     And I should push next button
 
-@so
+  @so
   Scenario Outline: Registered user fill Preapproval application, with by entering negative number or characters.
     When I should click on mortgage application
     Then I need to enter mortgage as a mortgage amount and downPayment as a down payment
@@ -69,7 +69,7 @@ Feature: User sing up feature
       | -500000  | -20000      |
       | -300000  | 40000       |
 
-  @dt
+  @dt @crossBrowser
   Scenario: Registered user fill Preapproval application, Additional Funds
     When I should click on mortgage application
     Then I need to fill preapproval details with Realtor and Loan officer, with multiple Additional Funds

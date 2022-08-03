@@ -86,7 +86,8 @@ public class VafaPage {
  public WebElement addThirdAmount;
 
 
- public void enterCredentialsAndClick(String employerName, String employerPosition, String city, String grossMonthlyIncome) {
+ public void enterCredentialsAndClick(String employerName, String employerPosition,
+                                      String city, String grossMonthlyIncome) {
 
   enterEmployerName.sendKeys(employerName);
   enterEmployerPosition.sendKeys(employerPosition);
@@ -95,7 +96,8 @@ public class VafaPage {
   clickNext.click();
  }
 
- public void enterSecondEmployerAndClick(String employerName, String employerPosition, String city, String startDate1, String grossMonthlyIncome) {
+ public void enterSecondEmployerAndClick(String employerName, String employerPosition,
+                                         String city, String startDate1, String grossMonthlyIncome) {
   clickAnotherEmployer.click();
   clickSecondEmployerID.sendKeys(employerName);
   clickSecondEmployerPosition.sendKeys(employerPosition);
