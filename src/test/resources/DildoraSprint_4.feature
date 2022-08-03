@@ -3,14 +3,14 @@
 Feature: User sing up feature
   as an unregister user i should be able to sing up using singup page
 
-  Background:
-    Given I am on the home page
-    When I enter valid credentials.
-    Then I should be able to sing in successfully
-    When I should click on mortgage application
-    Then I need to fill preapproval details
-    And I should push next button
-    When I am on the personal information page
+   Background:
+     Given I am on the home page
+     When I enter valid credentials.
+     Then I should be able to sing in successfully
+     When I should click on mortgage application
+     Then I need to fill preapproval details
+     And I should push next button
+     When I am on the personal information page
 
 
   Scenario: Registered user singin positive
@@ -54,9 +54,9 @@ Feature: User sing up feature
 
 
 
-  @dt
-  Scenario: Registered user should be able to click on the next button
-    When  I pass this information as a list of maps
+   @dt
+   Scenario: Registered user should be able to click on the next button
+     When  I pass this information as a list of maps
 
       | firstName | middleName | lastName | email                | dateOfBirth | SSN       | maritalStatus | cellPhone  | homePhone  |
       | Dominica  | Linet      | Hefferan | lhefferan0@state.com | 10.05.1989  | 541292226 | married       | 9073546524 | 5763643476 |
@@ -89,7 +89,7 @@ Feature: User sing up feature
       | rarklez@webmd.com | 09.11.1987  | 567861967 | married       | 3712850302 | 8227546021 |
 
 
-      Then System must show error message.
+     Then System must show error message.
 
 
 
@@ -111,4 +111,3 @@ Feature: User sing up feature
       | Mozes     | Bard       | Shave    | 11101987    | bshave1e@typepad.com     | 126612410 | married       | 8783023785 |
       | Juan      | Marrilee   | Rizzi    | 10111989    | mrizzi1f@scribd.com      | 284546726 | divorced      | 4968410729 |
       | Cecil     | Dena       | Lewsy    | 11121985    | dlewsy1h@storify.com     | 897349127 | divorced      | 8782146901 |
-
