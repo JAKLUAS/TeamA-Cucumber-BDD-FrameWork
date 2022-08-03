@@ -10,7 +10,8 @@ import org.junit.runner.RunWith;
 
 
 //         tags ="@dt or @so",
-         tags = "@crossBrowser",
+//         tags = "@crossBrowser",
+        tags = "@dtAsif",
 
         features = "src/test/resources",
          glue = "com/duobank/stepDefintions",

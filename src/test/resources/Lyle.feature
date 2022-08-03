@@ -117,7 +117,7 @@ Feature: Navigating to Expenses section and entering monthly rental amount in or
 
     Then I should be able to apply successfully
 
-
+@asifTest
   Scenario: User should be able to navigate to Summary section and Edit eConsent content
 
     When I am on the Expenses section
