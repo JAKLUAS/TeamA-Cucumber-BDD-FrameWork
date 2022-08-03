@@ -39,26 +39,28 @@ Feature: User sing up feature
 #    And I should push next button
 
 
-  Background:
-
-    Given I am on the home page
-    When I enter valid credentials.
-    Then I should be able to sing in successfully
 
 
-  @dt
+@dt
   Scenario: Registered user fill Preapproval application, with Realtor, Loan officer and Other Type Payment
+  Given I am on the home page
+  When I enter valid credentials.
+  Then I should be able to sing in successfully
 
-    When I should click on mortgage application
+  When I should click on mortgage application
     Then I need to fill preapproval details with Realtor, Loan officer
       | name | phone      | estimatedPrice | downPayment |
       | john | 3475556677 | 300000         | 60000       |
     And Other Type Payment
     And I should push next button
 
-  @so
+@so
   Scenario Outline: Registered user fill Preapproval application, with by entering negative number or characters.
-    When I should click on mortgage application
+  Given I am on the home page
+  When I enter valid credentials.
+  Then I should be able to sing in successfully
+
+  When I should click on mortgage application
     Then I need to enter mortgage as a mortgage amount and downPayment as a down payment
       | mortgage   | downPayment   |
       | <mortgage> | <downPayment> |
@@ -69,8 +71,12 @@ Feature: User sing up feature
       | -500000  | -20000      |
       | -300000  | 40000       |
 
-  @dt @crossBrowser
+  @dt
   Scenario: Registered user fill Preapproval application, Additional Funds
+    Given I am on the home page
+    When I enter valid credentials.
+    Then I should be able to sing in successfully
+
     When I should click on mortgage application
     Then I need to fill preapproval details with Realtor and Loan officer, with multiple Additional Funds
     |5000|
@@ -82,6 +88,10 @@ Feature: User sing up feature
 
   @dt
   Scenario: Registered user checking Application Wizard list
+    Given I am on the home page
+    When I enter valid credentials.
+    Then I should be able to sing in successfully
+
     When I should click on mortgage application
     Then I need to check the Application Wizard list to be like following
       | PreApproval Details                            |
