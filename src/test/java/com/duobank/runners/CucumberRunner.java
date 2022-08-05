@@ -11,8 +11,7 @@ import org.junit.runner.RunWith;
 
          //tags = "@dt or @so", // for regression
          //tags ="@parallel",
-         tags = "@crossBrowser",
-
+        tags = "@crossBrowser",
         features = "src/test/resources",
          glue = "com/duobank/stepDefintions",
 //         stepNotifications = true,
@@ -27,7 +26,7 @@ import org.junit.runner.RunWith;
 
 
 
-//         ,dryRun = true
+        //,dryRun = true
 
 
      )

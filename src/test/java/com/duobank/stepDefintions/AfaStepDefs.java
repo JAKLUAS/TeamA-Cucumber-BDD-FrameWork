@@ -11,8 +11,12 @@ import io.cucumber.java.en.When;
 import javafx.scene.layout.Background;
 import org.checkerframework.checker.units.qual.K;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 
 public class AfaStepDefs {
@@ -99,6 +103,58 @@ public class AfaStepDefs {
 
 
     }
+    @When("i Change Entries to {string} and search for {string}")
+    public void i_change_entries_to_and_search_for(String entries, String name) {
+        AfasSignInPage afa = new AfasSignInPage();
+        afa.clickOnValue.click();
+        afa.search.sendKeys(name);
+
+
+
+    }
+
+    @Then("i should be able to click and view the details")
+    public void i_should_be_able_to_click_and_view_the_details() {
+
+        AfasSignInPage afa = new AfasSignInPage();
+        afa.viewDetails.click();
+        Assert.assertEquals("http://qa-duobank.us-east-2.elasticbeanstalk.com/mortagageloandegtails.php?id=33985", Driver.getDriver().getCurrentUrl());
+
+    }
+
+    @Then("i  search for aplicants as List")
+    public void i_search_for_aplicants_as_list(List<String> dataTable) {
+        AfasSignInPage afa = new AfasSignInPage();
+        afa.search.sendKeys(dataTable.get(0));
+        SeleniumUtils.waitFor(1);
+        afa.clickOnApplication.click();
+        afa.search.sendKeys(dataTable.get(1));
+        SeleniumUtils.waitFor(1);
+        afa.clickOnApplication.click();
+        afa.search.sendKeys(dataTable.get(2));
+        SeleniumUtils.waitFor(1);
+        afa.clickOnApplication.click();
+        afa.search.sendKeys(dataTable.get(3));
+        SeleniumUtils.waitFor(1);
+        afa.clickOnApplication.click();
+        afa.search.sendKeys(dataTable.get(4));
+
+
+
+    }
+    @Then("i  should be able to se the aplicants list")
+    public void i_should_be_able_to_se_the_aplicants_list(List<String> aplicants) {
+
+        List<String> actualList = SeleniumUtils.getElementsText(Driver.getDriver().findElements(By.xpath("//table[@id='DataTables_Table_0']")));
+        List<String> expectedList = new ArrayList<>(aplicants);
+
+        Collections.sort(actualList);
+        Collections.sort(expectedList);
+
+        Assert.assertEquals(expectedList,expectedList);
+
+    }
+
 
 
 }
