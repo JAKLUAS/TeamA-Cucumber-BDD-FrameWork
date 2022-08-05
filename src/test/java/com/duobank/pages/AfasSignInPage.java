@@ -19,7 +19,7 @@ public class AfasSignInPage {
     public WebElement clickOnSelect;
 
     @FindBy(xpath = "//option[@value='50']")
-    public WebElement clickOnFifTy;
+  public WebElement clickOnFifTy;
 
     @FindBy(xpath = "//th[@class='sorting_asc']")
     public WebElement clickOnBorrower;
@@ -34,9 +34,14 @@ public class AfasSignInPage {
     public WebElement clickOnLogOut;
 
 
+  @FindBy(xpath = "//option[@value='10']")
+  public WebElement clickOnValue;
 
+  @FindBy(xpath = "//input[@type='search']")
+  public WebElement search;
 
-
+  @FindBy(xpath = "//a[@href='mortagageloandegtails.php?id=33985']")
+  public WebElement viewDetails;
 
 
 

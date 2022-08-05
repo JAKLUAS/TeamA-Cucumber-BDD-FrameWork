@@ -112,7 +112,7 @@ Feature: User should be able to complete credit report and sign E-consent form
     When I input correct information and click Agree
     Then I should be able to click next button
 
-  @dt
+ @dt @parallel
   Scenario: User should be able to fill out E-consent form using incorrect information for all 3 fields
     Given I am on the home page
     When I enter valid credentials.
@@ -146,8 +146,7 @@ Feature: User should be able to complete credit report and sign E-consent form
     Then I should be able to click Agree
     Then I should not be able to click next button
 
-
-@dt
+ @dt @crossBrowser
   Scenario: User should be able to fill out E-consent form using correct information for all 3 fields
     Given I am on the home page
     When I enter valid credentials.

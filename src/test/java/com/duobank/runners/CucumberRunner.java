@@ -9,17 +9,16 @@ import org.junit.runner.RunWith;
  @CucumberOptions(
 
 
-//         tags ="@dt or @so",
-//         tags = "@crossBrowser",
-        tags = "@dtAsif",
-
+         //tags = "@dt or @so", // for regression
+         //tags ="@parallel",
+        tags = "@crossBrowser",
         features = "src/test/resources",
          glue = "com/duobank/stepDefintions",
 //         stepNotifications = true,
 
          plugin = {
                 "pretty",
-                 "html:target/built-in-report/cucmber-html-report.html",
+                 "html:target/built-in-report/cucumber-html-report.html",
                  "json:target/cucumber.json",
                  "rerun:target/failedScenarios.txt"
 
@@ -27,7 +26,7 @@ import org.junit.runner.RunWith;
 
 
 
-     //     ,dryRun = true
+        //,dryRun = true
 
 
      )

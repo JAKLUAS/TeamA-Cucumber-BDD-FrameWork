@@ -44,7 +44,7 @@ Feature: User sing up feature
       When I enter valid credentials.
       Then I should be able to sing in successfully
 
- @dt
+ @parallel
   Scenario: Registered user fill Preapproval application, with Realtor, Loan officer and Other Type Payment
    When I should click on mortgage application
     Then I need to fill preapproval details with Realtor, Loan officer
@@ -53,7 +53,7 @@ Feature: User sing up feature
     And Other Type Payment
     And I should push next button
 
-@so
+ @so @crossBrowser
   Scenario Outline: Registered user fill Preapproval application, with by entering negative number or characters.
 
 
