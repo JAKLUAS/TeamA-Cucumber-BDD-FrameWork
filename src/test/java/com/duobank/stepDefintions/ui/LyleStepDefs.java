@@ -1,4 +1,4 @@
-package com.duobank.stepDefintions;
+package com.duobank.stepDefintions.ui;
 
 import com.duobank.pages.AsifPage;
 import com.duobank.pages.LylesPage;

@@ -9,9 +9,9 @@ import org.junit.runner.RunWith;
  @CucumberOptions(
 
 
-         //tags = "@dt or @so", // for regression
+         tags = "@dt or @so", // for regression
          //tags ="@parallel",
-        tags = "@crossBrowser",
+       // tags = "@crossBrowser",
         features = "src/test/resources",
          glue = "com/duobank/stepDefintions",
 //         stepNotifications = true,

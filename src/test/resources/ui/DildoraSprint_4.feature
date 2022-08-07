@@ -54,7 +54,7 @@ Feature: User sing up feature
 
 
 
-  @crossBrowser
+ @dt @crossBrowser
    Scenario: Registered user should be able to click on the next button
      When  I pass this information as a list of maps
 
