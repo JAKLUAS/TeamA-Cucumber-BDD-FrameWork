@@ -10,7 +10,7 @@ Feature: User sing up feature as an unregister user i should be able to sing up 
     When I navigate to singup page and enter valid credentials.
     Then I should be able to sing up successfully
 
-  @smoke
+
   Scenario: Non-registered user signup negative
 
     When I navigate to signup page and enter invalid credentials
@@ -29,7 +29,7 @@ Feature: User sing up feature as an unregister user i should be able to sing up 
     When I navigate to singup page and enter valid credentials as list of maps .
 
       | firstname | lastname | email             | password   |
-      | Khalel    | Dykman   | dykman1900@gmail.com | dykman2022 |
+      | Khalel    | Dykman   | dykman1902@gmail.com | dykman2022 |
 
     Then I should be able to sing up successfully
 

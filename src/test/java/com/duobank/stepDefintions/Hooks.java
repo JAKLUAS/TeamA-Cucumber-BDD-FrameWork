@@ -1,9 +1,8 @@
 package com.duobank.stepDefintions;
 
+import com.duobank.utilities.DBUtils;
 import com.duobank.utilities.Driver;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
-import io.cucumber.java.Scenario;
+import io.cucumber.java.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -12,7 +11,18 @@ import java.time.Duration;
 public class Hooks {
 
 
-    @Before
+    @BeforeAll   // runs once before all scenarios, must be static
+    public static void setupDb(){
+        DBUtils.createConnection();
+    }
+
+    @AfterAll   // runs once after all scenarios have completed, must be static
+    public static void closeDB(){
+        DBUtils.close();
+    }
+
+
+    @Before("not @db")
     public void setup(){
 
         Driver.getDriver().manage().window().maximize();
@@ -21,7 +31,7 @@ public class Hooks {
 
 
 
-    @After
+    @After ("not @db")
 
     public void tearDown(Scenario scenario){
 
