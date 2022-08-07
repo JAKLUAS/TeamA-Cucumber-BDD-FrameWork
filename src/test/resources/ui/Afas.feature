@@ -10,7 +10,8 @@ Feature: User sign in feature
 
 
   Scenario: Registered user sign in positive
-    Then I should be able to sign in successfully
+    Then I should be able to sing in successfully
+
   @smoke
 Scenario: Registered user click on Application list
   Given i am on sign in page

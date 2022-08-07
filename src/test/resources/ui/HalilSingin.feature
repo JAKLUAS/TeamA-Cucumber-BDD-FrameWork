@@ -10,11 +10,11 @@ Feature: User sing up feature
 
 
 
-   @parallel
+ @parallel
   Scenario: Registered user signin positive parametrized
     Given I am on the home page
     When  I enter "dykman2@gmail.com" as a username and "dykman2022" as password
-    Then I should be able to sign in successfully
+    Then  I should be able to sing in successfully
 
 
 

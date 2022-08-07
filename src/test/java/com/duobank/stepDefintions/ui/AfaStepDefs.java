@@ -1,4 +1,4 @@
-package com.duobank.stepDefintions;
+package com.duobank.stepDefintions.ui;
 
 import com.duobank.pages.AfasSignInPage;
 import com.duobank.pages.HomePage;
@@ -22,10 +22,10 @@ import java.util.Set;
 public class AfaStepDefs {
 
 
-    @Then("I should be able to sign in successfully")
-    public void i_should_be_able_to_sign_in_successfully() {
-        Assert.assertEquals("http://qa-duobank.us-east-2.elasticbeanstalk.com/dashboard.php", Driver.getDriver().getCurrentUrl());
-    }
+//    @Then("I should be able to sign in successfully")
+//    public void i_should_be_able_to_sign_in_successfully() {
+//        Assert.assertEquals("http://qa-duobank.us-east-2.elasticbeanstalk.com/dashboard.php", Driver.getDriver().getCurrentUrl());
+//    }
 
     @Given("i am on sign in page")
     public void i_am_on_sign_in_page() {
