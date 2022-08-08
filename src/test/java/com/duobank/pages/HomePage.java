@@ -41,6 +41,9 @@ public class HomePage {
     @FindBy (name = "login")
     private WebElement loginButton;
 
+    @FindBy (xpath = "span[@class='user-name']")
+    public WebElement username;
+
 
     public void clickOnSignUpPageLink(){
 
