@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
  @CucumberOptions(
 
 
-         tags = "@dt or @so", // for regression
+         tags = " @metadata",
          //tags ="@parallel",
        // tags = "@crossBrowser",
         features = "src/test/resources",
@@ -26,7 +26,7 @@ import org.junit.runner.RunWith;
 
 
 
-        //,dryRun = true
+       ,dryRun = true
 
 
      )
