@@ -58,7 +58,7 @@ public class HalilStepDefDB {
     public void i_add_a_new_user_to_the_database_with_the_following_info(List<Map<String,String>> dataTable) throws SQLException {
          data = dataTable.get(0);
 
-        String query = "INSERT INTO tbl_user ( first_name, last_name, email, password ) values ('"+data.get("firstname")+"','"+data.get("lastname")+"','"+data.get("email")+"','"+DigestUtils.md5Hex(data.get("password"))+"')";
+        String query = "INSERT INTO tbl_user ( first_name, last_name, email, password, phone,image,type, created_at ,modified_at,zone_id,church_id,country_id,active ) values ('"+data.get("firstname")+"','"+data.get("lastname")+"','"+data.get("email")+"','"+DigestUtils.md5Hex(data.get("password"))+"','"+data.get("phone")+"','"+data.get("image")+"','"+data.get("type")+"','"+data.get("created_at")+"','"+data.get("modified_at")+"','"+data.get("zone_id")+"','"+data.get("church_id")+"','"+data.get("country_id")+"','"+data.get("active")+"')";
 
         System.out.println(query);
 
@@ -90,6 +90,9 @@ public class HalilStepDefDB {
 
         softAssertions.assertThat(actualFirst).isEqualTo(data.get("first"));
         softAssertions.assertThat(actualLast).isEqualTo(data.get("last"));
+
+
+
     }
 
 
@@ -105,6 +108,11 @@ public class HalilStepDefDB {
 
         System.out.println(actualColumnNames);
     }
+
+
+
+
+
     @Then("It should be the following")
     public void it_should_be_the_following(List<String> expectedColumnNames) {
 
@@ -119,16 +127,23 @@ public class HalilStepDefDB {
     public void i_send_a_request_to_add_a_new_first_name_that_is_more_than_the_expected_length_of(int expected) throws SQLException {
         sb = new StringBuilder();
 
-        for (int i = 0; i < expected + 100; i++) {
+        for (int i = 0; i < expected +99 ; i++) {
             sb.append('a');
-               DBUtils.executeUpdate("INSERT INTO tbl_user ");
+
+        }
+               DBUtils.executeUpdate("INSERT INTO tbl_user (first_name) values ('"+sb+"') ");
 
             unexpected = expected;
-         }
+
 
     }
     @Then("The data should be truncated to the expected length")
     public void the_data_should_be_truncated_to_the_expected_length() {
+        List<List<Object>> queryResultAsListOfLists = DBUtils.getQueryResultAsListOfLists("SELECT first_name from tbl_user order by id desc limit 1");
+
+        int actualLength = ((String) (queryResultAsListOfLists.get(0).get(0))).length();
+
+        Assert.assertEquals(unexpected, actualLength);
 
     }
 
