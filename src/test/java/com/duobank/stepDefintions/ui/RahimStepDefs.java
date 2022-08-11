@@ -91,7 +91,7 @@ public class RahimStepDefs {
     @When("I input correct information as list of maps")
     public void i_input_correct_information_as_list_of_maps(List<Map<String,String>> dataTable) {
         Map<String,String> map =  dataTable.get(0);
-        System.out.println(dataTable);
+        //System.out.println(dataTable);
         RahimsPage rr = new RahimsPage();
         rr.inputFirstName.sendKeys(map.get("firstName")+ Keys.ENTER);
         rr.inputLastName.sendKeys(map.get("lastName")+ Keys.ENTER);
