@@ -95,12 +95,6 @@ public class LylesPage {
     @FindBy(xpath = "//input[@id='b_lastName']")
     public WebElement LastName;
 
-    @FindBy(xpath = "//span[@id='select2-b_suffix-container']")
-    public WebElement Suffix;
-
-    @FindBy(xpath = "//input[@class='select2-search__field']")
-    public WebElement Suffix2;
-
     @FindBy(xpath = "//input[@id='b_email']")
     public WebElement EmailAddress;
 
