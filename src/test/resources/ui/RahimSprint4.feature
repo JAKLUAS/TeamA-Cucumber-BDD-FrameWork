@@ -1,4 +1,4 @@
-@regression
+
 
 Feature: User should be able to complete credit report and sign E-consent form
 

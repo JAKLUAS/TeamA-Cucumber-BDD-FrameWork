@@ -2,7 +2,7 @@ Feature: Data-Mapping
 
 
 
-  @smoke @regression
+  @smoke  @regression
 Scenario: New User Sign Up from UI to DB flow
 Given I am on the home page
 When I navigate to singup page and enter valid credentials as list of maps .

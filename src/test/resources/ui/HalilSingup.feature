@@ -1,10 +1,10 @@
- @regression
+
 Feature: User sing up feature as an unregister user i should be able to sing up using singup page
 
   Background:
     Given I am on the home page
 
-  @smoke
+
   Scenario: Non registered user singup positive
 
     When I navigate to singup page and enter valid credentials.
