@@ -80,7 +80,7 @@
                     <includes>
 
                         <include>**/*CucumberRunner.java</include>
-                        <include>**/*FailedScenariosRunner.java</include>
+<!--                        <include>**/*FailedScenariosRunner.java</include>-->
 
 
                         <!--                        <include>${className}</include>-->
