@@ -12,10 +12,10 @@ public class RahimsPage {
 
         }
 
-        @FindBy(xpath = "//label[@for='creditreport1']")
+        @FindBy(xpath = "//input[@id='creditreport1']")
         public WebElement clickYesCreditReport;
 
-        @FindBy(xpath = "//label[@for='creditreport2']")
+        @FindBy(xpath = "//input[@id='creditreport2']")
         public WebElement clickNoCreditReport;
 
         @FindBy(xpath = "//a[@href='#next']")
@@ -53,28 +53,6 @@ public class RahimsPage {
 
         @FindBy(xpath = "//label[@id='eConsentdeclarerEmail-error']")
         public WebElement checkForError;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
