@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
  @CucumberOptions(
 
 
-//         tags = "@trigger",
+        tags = "@smoke or @regression",
          //tags ="@parallel",
        // tags = "@crossBrowser",
         features = "src/test/resources",

@@ -1,7 +1,7 @@
-@regression
+
 Feature: User sign in feature
   as a registered user i should be able to sign in
-
+  @regression
 
  Background:
     Given I am on the home page
@@ -12,12 +12,12 @@ Feature: User sign in feature
   Scenario: Registered user sign in positive
     Then I should be able to sing in successfully
 
-  @smoke
+
 Scenario: Registered user click on Application list
   Given i am on sign in page
   Then Application list needs to appear successfully
 
-  @smoke
+
     Scenario: Change Entries to 50
       Given im on Application list page
     When i click on the number
