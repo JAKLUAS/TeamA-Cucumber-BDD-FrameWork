@@ -17,7 +17,7 @@ And The database should also have correctly mapped info
 
 
 
-  @smoke @trigger @regression
+   @smoke @trigger @regression
   Scenario: New User Creation, verify data mapping DB to UI flow
     When I add a new user to the database with the following info
       | firstname | lastname | email                | password  | phone      | image | type | creat_at | modified_at | zone_id | church_id | country_id | active |
