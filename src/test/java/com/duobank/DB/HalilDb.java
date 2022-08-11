@@ -28,7 +28,8 @@ public class HalilDb {
 
         System.out.println(result2.get(0).get("down_payment")); // benefit of maps no counting, type key object
 
-        System.out.println(DBUtils.getColumnNames("SELECT * FROM tbl_mortagage limit 10;")); // GETS ALL THE COLUMN NAMES
+        System.out.println(DBUtils.getColumnNames("SELECT * FROM tbl_mortagage ;")); // GETS ALL THE COLUMN NAMES
+
         System.out.println(DBUtils.getRowCount()); // count rows
 
 

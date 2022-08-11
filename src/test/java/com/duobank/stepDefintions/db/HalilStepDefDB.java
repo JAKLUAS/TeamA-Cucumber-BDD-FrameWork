@@ -4,7 +4,6 @@ import com.duobank.pages.HomePage;
 import com.duobank.utilities.ConfigReader;
 import com.duobank.utilities.DBUtils;
 import com.duobank.utilities.Driver;
-import com.sun.deploy.cache.BaseLocalApplicationProperties;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -17,6 +16,7 @@ import java.util.Map;
 
 public class HalilStepDefDB {
 
+   //1- ui-db
 
     SoftAssertions softAssertions;
 
@@ -53,6 +53,8 @@ public class HalilStepDefDB {
 
        // softAssertions.assertAll();
     }
+
+    //2- db-ui
     Map<String, String> data;
     @When("I add a new user to the database with the following info")
     public void i_add_a_new_user_to_the_database_with_the_following_info(List<Map<String,String>> dataTable) throws SQLException {
@@ -64,9 +66,6 @@ public class HalilStepDefDB {
 
 
         DBUtils.executeUpdate(query);
-
-
-
 
     }
     @Then("I should be able to log in with the same credentials on the UI")
@@ -92,26 +91,23 @@ public class HalilStepDefDB {
         softAssertions.assertThat(actualLast).isEqualTo(data.get("last"));
 
 
-
-    }
-
+      }
 
 
 
 
 
+
+// 3- data integrity
 
     List<String> actualColumnNames;
-    @When("I send a request to retrieve colum names for albums table")
-    public void i_send_a_request_to_retrieve_colum_names_for_albums_table() {
+    @When("I send a request to retrieve colum names for tbl_user table")
+    public void i_send_a_request_to_retrieve_colum_names_for_tbl_user_table() {
+
         actualColumnNames = DBUtils.getColumnNames("SELECT * FROM tbl_user limit 1");
 
         System.out.println(actualColumnNames);
     }
-
-
-
-
 
     @Then("It should be the following")
     public void it_should_be_the_following(List<String> expectedColumnNames) {
@@ -120,6 +116,7 @@ public class HalilStepDefDB {
 
 
     }
+ // 4- truncate
 
     StringBuilder sb;
     int unexpected;
@@ -128,10 +125,10 @@ public class HalilStepDefDB {
         sb = new StringBuilder();
 
         for (int i = 0; i < expected +99 ; i++) {
-            sb.append('a');
+            sb.append('H');
 
         }
-               DBUtils.executeUpdate("INSERT INTO tbl_user (first_name) values ('"+sb+"') ");
+               DBUtils.executeUpdate("INSERT IGNORE INTO tbl_user (first_name) values ('"+sb+"') ");
 
             unexpected = expected;
 
@@ -139,13 +136,30 @@ public class HalilStepDefDB {
     }
     @Then("The data should be truncated to the expected length")
     public void the_data_should_be_truncated_to_the_expected_length() {
-        List<List<Object>> queryResultAsListOfLists = DBUtils.getQueryResultAsListOfLists("SELECT first_name from tbl_user order by id desc limit 1");
+        List<List<Object>> queryResultAsListOfLists = DBUtils.getQueryResultAsListOfLists("SELECT first_name from tbl_user where first_name like \"HH%\" limit 1;");
 
         int actualLength = ((String) (queryResultAsListOfLists.get(0).get(0))).length();
 
         Assert.assertEquals(unexpected, actualLength);
 
     }
+
+    // 5- business rule
+    List<List<Object>> actualList;
+    @When("I send a request to retrieve duplicate email addresses")
+    public void i_send_a_request_to_retrieve_duplicate_email_addresses() {
+
+        actualList = DBUtils.getQueryResultAsListOfLists("SELECT email , count(*) FROM tbl_user GROUP BY email HAVING (COUNT(*) > 1)");
+    }
+    @Then("The result should be empty")
+    public void the_result_should_be_empty() {
+
+        Assert.assertTrue(actualList.isEmpty());
+
+    }
+
+
+
 
 }
 
