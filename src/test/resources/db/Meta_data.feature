@@ -1,7 +1,7 @@
 Feature: Database metadata scenarios
 
 
-  @metadata1
+  @smoke  @regression
   Scenario: Verify the column names from user table
     When I send request to retrieve column names from user table
     Then It should be the following list
@@ -19,7 +19,7 @@ Feature: Database metadata scenarios
       | church_id   |
       | country_id  |
       | active      |
-  @metadata2
+  @smoke  @regression
   Scenario: Verify the column names from mortgage table
     When I send request to select column names from mortgage table
     Then It should be listed the following
@@ -95,12 +95,12 @@ Feature: Database metadata scenarios
       | user_id                       |
       | active                        |
 
-  @metadata3
+  @smoke  @regression
   Scenario: Verify the title column length of user table
     When I send request to add new title that is longer than expected length of 100
     Then Data should be truncated to the expected length
 
-  @metadata4
+  @smoke  @regression
   Scenario: Verify the mortgage table for unique id numbers
     When  I send a request to retrieve duplicate id numbers
     Then  The result should be empty
