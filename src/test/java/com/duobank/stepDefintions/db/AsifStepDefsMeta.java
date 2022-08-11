@@ -11,25 +11,6 @@ import java.util.List;
 public class AsifStepDefsMeta {
 
     List<String> actualColumnNames;
-
-    @When("I send request to retrieve column names from user table")
-    public void i_send_request_to_retrieve_column_names_from_mortgage_table() {
-
-        actualColumnNames = DBUtils.getColumnNames("select * from tbl_user limit 0;");
-
-        System.out.println(actualColumnNames);
-
-    }
-    @Then("It should be the following list")
-    public void it_should_be_the_following_list(List<String> expectedColumnName) {
-
-        Assert.assertEquals(expectedColumnName,actualColumnNames);
-
-    }
-
-
-
-
     StringBuilder sbGen;
     int unexpectedNum;
 

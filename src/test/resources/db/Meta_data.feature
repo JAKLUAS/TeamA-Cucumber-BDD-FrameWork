@@ -1,24 +1,7 @@
 Feature: Database metadata scenarios
 
 
-  @smoke  @regression
-  Scenario: Verify the column names from user table
-    When I send request to retrieve column names from user table
-    Then It should be the following list
-      | id          |
-      | email       |
-      | password    |
-      | first_name  |
-      | last_name   |
-      | phone       |
-      | image       |
-      | type        |
-      | created_at  |
-      | modified_at |
-      | zone_id     |
-      | church_id   |
-      | country_id  |
-      | active      |
+
   @smoke  @regression
   Scenario: Verify the column names from mortgage table
     When I send request to select column names from mortgage table
