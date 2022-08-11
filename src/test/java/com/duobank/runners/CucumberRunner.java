@@ -9,7 +9,11 @@ import org.junit.runner.RunWith;
  @CucumberOptions(
 
 
-         tags = "@Asif2",
+
+    
+
+        tags = "@smoke or @regression",
+
          //tags ="@parallel",
        // tags = "@crossBrowser",
         features = "src/test/resources",
@@ -26,7 +30,9 @@ import org.junit.runner.RunWith;
 
 
 
-//       ,dryRun = true
+
+
+      // ,dryRun = true
 
 
      )

@@ -1,4 +1,4 @@
-@regression
+
 Feature: User sing up feature
   as an register user i should be able to sing up using singup page
 
