@@ -9,7 +9,11 @@ import org.junit.runner.RunWith;
  @CucumberOptions(
 
 
+
+    
+
         tags = "@smoke or @regression",
+
          //tags ="@parallel",
        // tags = "@crossBrowser",
         features = "src/test/resources",
@@ -23,6 +27,10 @@ import org.junit.runner.RunWith;
                  "rerun:target/failedScenarios.txt"
 
          }
+
+
+
+
 
       // ,dryRun = true
 

@@ -1,6 +1,6 @@
 
 Feature: User sing up feature
-  as an unregister user i should be able to sing up using singup page
+  as an register user i should be able to sing up using singup page
 
 
 #  Scenario: Registered user fill Preapproval application, without Realtor and Loan officer

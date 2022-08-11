@@ -48,13 +48,13 @@ public class LylesPage {
     public WebElement consentDontAgree;
 
     @FindBy(id = "estimatedprice")
-    public WebElement estimatedPurchasePrice;
+    public WebElement estimatedPurchasePrice; //
 
     @FindBy(id = "downpayment")
     public WebElement downpaymentAmount;
 
     @FindBy(xpath = "//a[@id='PreApprovalEdit']")
-    public WebElement preapprovalEdit;
+    public WebElement preapprovalEdit;  //
 
     @FindBy(xpath = "//input[@ID='eConsentdeclarerFirstName']")
     public WebElement econsentFirstName;
