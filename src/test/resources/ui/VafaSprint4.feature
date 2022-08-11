@@ -1,4 +1,4 @@
-@regression
+
 
  Feature: User should be able to fill in Employment and Income details feature
 
