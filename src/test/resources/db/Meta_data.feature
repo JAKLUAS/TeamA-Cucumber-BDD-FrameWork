@@ -86,5 +86,5 @@ Feature: Database metadata scenarios
   @smoke  @regression
   Scenario: Verify the mortgage table for unique id numbers
     When  I send a request to retrieve duplicate id numbers
-    Then  The result should be empty
+    Then  The result must be empty
 

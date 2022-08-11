@@ -67,8 +67,8 @@ public class AsifStepDefsMeta {
        actualIdList = DBUtils.getQueryResultAsListOfLists("SELECT id FROM tbl_mortagage GROUP BY id HAVING (COUNT(*) > 1);");
 
     }
-    @Then("The result should be empty")
-    public void the_result_should_be_empty() {
+    @Then("The result must be empty")
+    public void the_result_must_be_empty() {
 
         Assert.assertTrue(actualIdList.isEmpty());
     }
