@@ -1,7 +1,7 @@
 
 Feature: User sign in feature
   as a registered user i should be able to sign in
-  @regression
+
 
  Background:
     Given I am on the home page
