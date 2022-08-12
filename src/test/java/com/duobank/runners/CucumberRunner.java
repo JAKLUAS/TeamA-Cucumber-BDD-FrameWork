@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
 
     
 
-        tags = " @smoke  @regression",
+        tags = "@smoke @regression",
 
          //tags ="@parallel",
        // tags = "@crossBrowser",
