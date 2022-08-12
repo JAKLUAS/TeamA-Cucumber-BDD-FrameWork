@@ -33,8 +33,6 @@ public class HalilDb {
         System.out.println(DBUtils.getRowCount()); // count rows
 
 
-
-
     }
     }
 
