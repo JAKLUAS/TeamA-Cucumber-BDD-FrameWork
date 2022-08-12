@@ -1,24 +1,7 @@
 Feature: Database metadata scenarios
 
 
-  @smoke  @regression
-  Scenario: Verify the column names from user table
-    When I send request to retrieve column names from user table
-    Then It should be the following list
-      | id          |
-      | email       |
-      | password    |
-      | first_name  |
-      | last_name   |
-      | phone       |
-      | image       |
-      | type        |
-      | created_at  |
-      | modified_at |
-      | zone_id     |
-      | church_id   |
-      | country_id  |
-      | active      |
+
   @smoke  @regression
   Scenario: Verify the column names from mortgage table
     When I send request to select column names from mortgage table
@@ -104,4 +87,11 @@ Feature: Database metadata scenarios
   Scenario: Verify the mortgage table for unique id numbers
     When  I send a request to retrieve duplicate id numbers
     Then  The result must be empty
+
+
+  @smoke  @regression
+  Scenario: Verify if all emails in mortgage table contains "@"
+    When  I retrieve all emails from mortgage table and checked if they are contain "@"
+    Then  They all must contain mentioned symbol
+
 

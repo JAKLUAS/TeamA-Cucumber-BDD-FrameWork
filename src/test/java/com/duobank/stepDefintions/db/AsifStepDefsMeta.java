@@ -11,25 +11,6 @@ import java.util.List;
 public class AsifStepDefsMeta {
 
     List<String> actualColumnNames;
-
-    @When("I send request to retrieve column names from user table")
-    public void i_send_request_to_retrieve_column_names_from_mortgage_table() {
-
-        actualColumnNames = DBUtils.getColumnNames("select * from tbl_user limit 0;");
-
-        System.out.println(actualColumnNames);
-
-    }
-    @Then("It should be the following list")
-    public void it_should_be_the_following_list(List<String> expectedColumnName) {
-
-        Assert.assertEquals(expectedColumnName,actualColumnNames);
-
-    }
-
-
-
-
     StringBuilder sbGen;
     int unexpectedNum;
 
@@ -91,6 +72,25 @@ public class AsifStepDefsMeta {
 
         Assert.assertTrue(actualIdList.isEmpty());
     }
+
+
+
+    List<List<Object>> expected;
+    List<List<Object>> actual;
+
+
+    @When("I retrieve all emails from mortgage table and checked if they are contain {string}")
+    public void i_retrieve_all_emails_from_mortgage_table_and_checked_if_they_are_contain(String string) {
+
+       expected = DBUtils.getQueryResultAsListOfLists("select count(nullif(b_email, ''))  from tbl_mortagage ;");
+       actual = DBUtils.getQueryResultAsListOfLists("select (count(*)) from tbl_mortagage where b_email like '%@%';");
+
+    }
+    @Then("They all must contain mentioned symbol")
+    public void they_all_must_contain_mentioned_symbol() {
+     Assert.assertEquals(expected,actual);
+    }
+
 
 
 
