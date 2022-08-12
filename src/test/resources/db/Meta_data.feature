@@ -88,3 +88,10 @@ Feature: Database metadata scenarios
     When  I send a request to retrieve duplicate id numbers
     Then  The result must be empty
 
+
+  @smoke  @regression
+  Scenario: Verify if all emails in mortgage table contains "@"
+    When  I retrieve all emails from mortgage table and checked if they are contain "@"
+    Then  They all must contain mentioned symbol
+
+

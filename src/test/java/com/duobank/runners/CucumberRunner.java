@@ -12,7 +12,10 @@ import org.junit.runner.RunWith;
 
     
 
-        tags = "@smoke or @regression",
+    
+
+        tags = " @smoke  @regression",
+
 
          //tags ="@parallel",
        // tags = "@crossBrowser",
@@ -32,7 +35,11 @@ import org.junit.runner.RunWith;
 
 
 
-      // ,dryRun = true
+
+  
+
+//       ,dryRun = true
+
 
 
      )
