@@ -16,7 +16,7 @@ Feature: Data base Scenario
 
 
 
-  @smoke  @regression
+    @regression
   Scenario: Verify the mortgage table for unique SSN numbers
     When  I send a request to retrieve duplicate SSN numbers
     Then  The result must be empty in the test case

@@ -18,6 +18,7 @@ public class AsifStepDefs {
     @When("I should click on mortgage application")
     public void i_should_click_on_mortgage_application() {
         AsifPage mortgageDetails = new AsifPage();
+        SeleniumUtils.waitFor(2);
         mortgageDetails.clickOnMortgage.click();
         Assert.assertEquals("http://qa-duobank.us-east-2.elasticbeanstalk.com/mortagage.php", Driver.getDriver().getCurrentUrl());
 
