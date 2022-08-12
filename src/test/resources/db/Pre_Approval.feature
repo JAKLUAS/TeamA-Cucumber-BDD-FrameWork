@@ -17,7 +17,7 @@ Feature: User sing up feature
       | realtor_info | b_cell     | est_purchase_price | down_payment |
       | john         | 3475556677 | 300000             | 60000        |
 
-  @smoke  @regression
+  @aaa
   Scenario: Registered user fill Preapproval application , with Realtor, Loan officer and Other Type Payment
     When I should click on mortgage application
     And I add new user to database for application
