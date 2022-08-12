@@ -11,12 +11,12 @@ import java.time.Duration;
 public class Hooks {
 
 
-    @BeforeAll   // runs once before all scenarios, must be static
+    @BeforeAll
     public static void setupDb(){
         DBUtils.createConnection();
     }
 
-    @AfterAll   // runs once after all scenarios have completed, must be static
+    @AfterAll
     public static void closeDB(){
         DBUtils.close();
     }

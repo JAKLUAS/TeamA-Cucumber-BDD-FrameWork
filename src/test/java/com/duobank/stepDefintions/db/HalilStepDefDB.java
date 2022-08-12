@@ -158,6 +158,18 @@ public class HalilStepDefDB {
 
     }
 
+// 6 minimum downpayment
+    @When("I send a request to retrieve min down payment")
+    public void i_send_a_request_to_retrieve_min_down_payment() {
+        actualList = DBUtils.getQueryResultAsListOfLists("select min(down_payment) from tbl_mortagage");
+    }
+
+    @Then("The result should be empt")
+    public void the_result_should_be_empt() {
+        Assert.assertFalse(actualList.isEmpty());
+    }
+
+
 
 
 
