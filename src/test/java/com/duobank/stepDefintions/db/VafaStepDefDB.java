@@ -59,8 +59,8 @@ softAssertions.assertThat(actualMonthlyIncome).isEqualTo(expectedMonthlyIncome);
     public void i_send_a_request_to_retrieve_duplicate_i_ds() {
         actualList = DBUtils.getQueryResultAsListOfLists("SELECT id, count(*) FROM tbl_mortagage GROUP BY id HAVING (COUNT(*) > 1)");
     }
-    @Then("The result must be empty")
-    public void the_result_must_be_empty() {
+    @Then("The result should show as empty")
+    public void the_result_should_show_as_empty() {
         Assert.assertTrue(actualList.isEmpty());
 
     }

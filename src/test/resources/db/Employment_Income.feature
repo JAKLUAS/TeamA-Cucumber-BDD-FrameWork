@@ -81,7 +81,7 @@ Background:
 @smoke @regression
   Scenario: Verify the mortagage table for unique IDs
     When  I send a request to retrieve duplicate IDs
-    Then  The result must be empty
+    Then  The result should show as empty
 
 
 @smoke @regression
