@@ -60,4 +60,15 @@ And The database should also have correctly mapped info
     Then  The result should be empty
 
 
+  @numeric
+  Scenario: check the tbl_mortagage table for min down payment implimented correctly
+    When  I send a request to retrieve min down payment
+    Then  The result should be empt
+
+
+  Scenario: check the tbl_mortagage table for max down payment implimented correctly
+    When  I send a request to retrieve max down payment
+    Then  The result should be numeric
+
+
 
