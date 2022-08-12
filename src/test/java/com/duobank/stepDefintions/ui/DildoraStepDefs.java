@@ -236,7 +236,7 @@ public class DildoraStepDefs {
         dildoraPage.enterLastName.sendKeys(Keys.ENTER+map.get("lastName"));
         dildoraPage.clickSuffix.click();
         SeleniumUtils.waitFor(2);
-        dildoraPage.enterSuffix.sendKeys("Jr"+ Keys.ENTER);
+       // dildoraPage.enterSuffix.sendKeys("Jr"+ Keys.ENTER);
         dildoraPage.enterEmailAddress.sendKeys(Keys.ENTER+map.get("email"));
         dildoraPage.enterSSN.sendKeys(Keys.ENTER+map.get("SSN"));
         Actions action = new Actions(Driver.getDriver());

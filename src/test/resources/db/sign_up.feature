@@ -54,10 +54,12 @@ And The database should also have correctly mapped info
     Then  The data should be truncated to the expected length
 
 
-  @smoke  @regression
+   @regression
   Scenario: Verify the tbl_user table for unique email addresses
     When  I send a request to retrieve duplicate email addresses
     Then  The result should be empty
+
+
 
 
 
