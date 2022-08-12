@@ -22,7 +22,7 @@ public class RahimStepDefs {
     }
 
     @When("I click yes to order credit report")
-    public void I_click_yes_to_order_credit_report() {
+    public void I_click_yes_to_order_credit_report() throws InterruptedException {
         RahimsPage rr = new RahimsPage();
         SeleniumUtils.waitFor(3);
         SeleniumUtils.scroll(0,-200);
@@ -32,6 +32,7 @@ public class RahimStepDefs {
     @Then("I should be able to click next button")
     public void I_should_be_able_to_click_next_button() {
         RahimsPage rr = new RahimsPage();
+        SeleniumUtils.waitFor(2);
         rr.clickNext.click();
         SeleniumUtils.waitFor(3);
 

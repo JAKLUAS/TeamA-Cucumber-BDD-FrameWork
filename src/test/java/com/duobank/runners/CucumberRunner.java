@@ -16,7 +16,6 @@ import org.junit.runner.RunWith;
 
         tags = " @smoke  @regression",
 
-
          //tags ="@parallel",
        // tags = "@crossBrowser",
         features = "src/test/resources",
@@ -35,10 +34,11 @@ import org.junit.runner.RunWith;
 
 
 
+     // ,dryRun = true
+
 
   
 
-//       ,dryRun = true
 
 
 
