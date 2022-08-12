@@ -56,3 +56,12 @@ Feature: Summary Section Data Mapping
     And I should be able to edit eConsent using same info from UI
     Then I should be able to apply successfully
     And all the information that i edited should be correct
+
+  @smoke @regression
+  Scenario: Null values should not be allowed for the Primary Key column
+    When I send a request to retrieve null values for Primary Key Column
+    Then the result should return empty
+
+
+
+

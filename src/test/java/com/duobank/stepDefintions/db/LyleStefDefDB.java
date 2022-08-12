@@ -101,5 +101,18 @@ public class LyleStefDefDB {
         sprint5.clickNext.click();
         sprint5.saveButton.click();
     }
+
+    List<List<Object>> nullList;
+    @When("I send a request to retrieve null values for Primary Key Column")
+    public void iSendARequestToRetrieveNullValuesForPrimaryKeyColumn() {
+
+        nullList = DBUtils.getQueryResultAsListOfLists("SELECT id, realtor_status FROM tbl_mortagage where id is null");
+    }
+
+    @Then("the result should return empty")
+    public void theResultShouldReturnEmpty() {
+
+        Assert.assertTrue(nullList.isEmpty());
+    }
 }
 
