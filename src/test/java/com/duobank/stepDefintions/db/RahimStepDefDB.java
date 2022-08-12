@@ -50,6 +50,7 @@ public class RahimStepDefDB {
         softAssertions.assertThat(actualLastName).isEqualTo(expectedLastName);
         softAssertions.assertThat(actualEmail).isEqualTo(expectedEmail);
 
+
     }
 
     @Then("The database should not map info for Econsent columns")
@@ -73,6 +74,7 @@ public class RahimStepDefDB {
             Assert.assertNotEquals(actualFirstName, expectedFirstName);
             Assert.assertNotEquals(actualLastName, expectedLastName);
             Assert.assertNotEquals(actualEmail, expectedEmail);
+
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Exception");
         }
