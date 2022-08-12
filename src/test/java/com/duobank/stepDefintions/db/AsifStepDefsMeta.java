@@ -75,6 +75,25 @@ public class AsifStepDefsMeta {
 
 
 
+    List<List<Object>> expected;
+    List<List<Object>> actual;
+
+
+    @When("I retrieve all emails from mortgage table and checked if they are contain {string}")
+    public void i_retrieve_all_emails_from_mortgage_table_and_checked_if_they_are_contain(String string) {
+
+       expected = DBUtils.getQueryResultAsListOfLists("select count(nullif(b_email, ''))  from tbl_mortagage ;");
+       actual = DBUtils.getQueryResultAsListOfLists("select (count(*)) from tbl_mortagage where b_email like '%@%';");
+
+    }
+    @Then("They all must contain mentioned symbol")
+    public void they_all_must_contain_mentioned_symbol() {
+     Assert.assertEquals(expected,actual);
+    }
+
+
+
+
 
 
 }
