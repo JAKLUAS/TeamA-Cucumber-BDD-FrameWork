@@ -13,11 +13,13 @@ public class Hooks {
 
     @BeforeAll
     public static void setupDb(){
+
         DBUtils.createConnection();
     }
 
     @AfterAll
     public static void closeDB(){
+
         DBUtils.close();
     }
 

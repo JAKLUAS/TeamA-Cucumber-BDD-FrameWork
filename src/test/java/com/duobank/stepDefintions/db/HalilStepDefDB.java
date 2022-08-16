@@ -51,7 +51,8 @@ public class HalilStepDefDB {
 
         DBUtils.executeUpdate("DELETE from tbl_user WHERE first_name='"+expectedFirst+"'");
 
-       // softAssertions.assertAll();
+        // softAssertions.assertAll();
+
     }
 
     //2- db-ui

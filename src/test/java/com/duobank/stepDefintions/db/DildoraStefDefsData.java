@@ -132,7 +132,7 @@ public class DildoraStefDefsData {
         softAssertions.assertThat(actualCellPhone).isEqualTo(expectedCellPhone);
         softAssertions.assertThat(actualHomePhone).isEqualTo(expectedHomePhone);
 
-
+         softAssertions.assertAll();
 
     }
 
