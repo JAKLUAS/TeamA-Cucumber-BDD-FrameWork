@@ -50,7 +50,7 @@ public class Register {
     @Then("The response should contain the following")
     public void the_response_should_contain_the_following(Map<String,String> dataTable) {
         response.then(). log().all().
-                statusCode(201).
+                statusCode(200).
                 header("Content-Type", dataTable.get("Content-Type")).
                 header("Server", dataTable.get("Server"));
 
@@ -67,7 +67,7 @@ public class Register {
                 body("{\n" +
                         "  \"first_name\": \"Ahmet\",\n" +
                         "  \"last_name\": \"Dikmen\",\n" +
-                        "  \"email\": \"ahmet_dkmn3@gmail.com\",\n" +
+                        "  \"email\": \"ahmet_dkmn12@gmail.com\",\n" +
                         "  \"password\":\"ahmet1234\" ,\n" +
                         "}").
                 when(). log().all().
