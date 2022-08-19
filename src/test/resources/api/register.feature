@@ -4,19 +4,19 @@ Feature: Testing DuoBank API
      Given The Base URI is set
 
 
-
+  @api
   Scenario: Verify User info update with POST request
 
 
     When  I send a Post request to "/register.php" endpoint with the following values
       | first_name | Jhony                |
       | last_name  | Deep                 |
-      | email      | Jhony_deep5@gmail.com |
+      | email      | Jhony_deep12@gmail.com |
       | passwords  | jhony1234            |
 
     Then The response should contain the following
 
-      | status-code  | 201                             |
+      | status-code  | 200                             |
       | Content-Type | application/json; charset=UTF-8 |
       | Server       | nginx/1.20.0                    |
 
