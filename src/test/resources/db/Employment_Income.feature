@@ -89,7 +89,5 @@ Background:
     When  I send a request to retrieve minimum down-payment
     Then  The result should not be empty
 
-  @smoke @regression
-  Scenario: I check the mortgage table for maximum down-payment implemented correctly
-    When  I send a request to retrieve maximum down-payment
-    Then  The result shouldn't be empty
+
+

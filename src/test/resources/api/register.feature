@@ -22,7 +22,7 @@ Feature: Testing DuoBank API
 
 
 
-    @api
+
     Scenario: verify created user info
       When I send a post request to the end point with valid credentials
       Then verify the status code
