@@ -12,6 +12,8 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.not;
 
 public class Register {
 
@@ -37,10 +39,10 @@ public class Register {
 
                 contentType(ContentType.JSON).
                 body("{\n" +
-                        "  \"first_name\": \""+name+"\",\n" +
-                        "  \"last_name\": \""+last+" \",\n" +
-                        "  \"email\" : \""+email+"\",\n" +
-                        "  \"password\" : \""+password+"\" ,\n" +
+                        "    \"first_name\": \""+name+"\",\n" +
+                        "    \"last_name\": \""+last+"\",\n" +
+                        "    \"email\":\""+email+"\",\n" +
+                        "    \"password\":\""+password+"\"\n" +
                         "}").
                 when(). log().all().
                 post(endpoint);
@@ -65,10 +67,10 @@ public class Register {
                 header("Accept", "application/vnd.api+json").
                 contentType(ContentType.JSON).
                 body("{\n" +
-                        "  \"first_name\": \"Ahmet\",\n" +
-                        "  \"last_name\": \"Dikmen\",\n" +
-                        "  \"email\": \"ahmet_dkmn12@gmail.com\",\n" +
-                        "  \"password\":\"ahmet1234\" ,\n" +
+                        "    \"first_name\": \"Jhony\",\n" +
+                        "    \"last_name\": \"Deep\",\n" +
+                        "    \"email\": \"jhony_deep145@gmail.com\",\n" +
+                        "    \"password\" : \"jhony1234\"\n" +
                         "}").
                 when(). log().all().
                 post(String.valueOf(Endpoints.REGISTER));
@@ -79,4 +81,33 @@ public class Register {
                 statusCode(200);
     }
 
+    // negative scenario
+
+
+
+    @When("I send a post request to the end point with existing credentials")
+    public void i_send_a_post_request_to_the_end_point_with_existing_credentials() {
+        response = given().
+                header("Accept", "application/vnd.api+json").
+                contentType(ContentType.JSON).
+                body("{\n" +
+                        "    \"first_name\": \"Halil\",\n" +
+                        "    \"last_name\": \"Baba\",\n" +
+                        "    \"email\":\"halodkmn1@gmail.com\",\n" +
+                        "    \"password\":\"halo1234\"\n" +
+                        "}").
+                when(). log().all().
+                post(String.valueOf(Endpoints.REGISTER));
+    }
+    @Then("verify the status code  and error message")
+    public void verify_the_status_code_and_error_message() {
+
+        response.then(). log().all().
+                statusCode(200).
+                header("Content-Type", "application/json; charset=UTF-8").
+              body("message", equalTo("This E-mail already in use!"));
+
+
+
+    }
 }
