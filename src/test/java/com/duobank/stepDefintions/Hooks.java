@@ -24,7 +24,7 @@ public class Hooks {
     }
 
 
-    @Before("not @db")
+    @Before("not @api")
     public void setup(){
 
         Driver.getDriver().manage().window().maximize();
@@ -33,7 +33,8 @@ public class Hooks {
 
 
 
-    @After ("not @db")
+
+    @After ("not @api")
 
     public void tearDown(Scenario scenario){
 
