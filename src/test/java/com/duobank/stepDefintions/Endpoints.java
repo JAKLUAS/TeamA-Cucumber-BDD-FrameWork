@@ -7,6 +7,7 @@ public enum Endpoints {
     LOGIN("/login.php"),
     MORTGAGE("/getmortagage.php");
 
+
     final String str;
     Endpoints(String str) {
        this.str = str;
