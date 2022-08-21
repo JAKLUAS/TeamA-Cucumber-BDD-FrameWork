@@ -5,7 +5,8 @@ public enum Endpoints {
 
     REGISTER("/register.php"),
     LOGIN("/login.php"),
-    MORTGAGE("/getmortagage.php");
+    MORTGAGE("/getmortagage.php"),
+    POST_MORTGAGE("/mortagagedetails.php");
 
     final String str;
     Endpoints(String str) {

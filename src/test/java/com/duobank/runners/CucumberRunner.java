@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
 
     
 
-        tags = "@test",
+          tags = "@test",
 
          //tags ="@parallel",
        // tags = "@crossBrowser",
@@ -31,7 +31,7 @@ import org.junit.runner.RunWith;
          }
 
 
-      ,dryRun = true
+    //  ,dryRun = true
 
 
   
