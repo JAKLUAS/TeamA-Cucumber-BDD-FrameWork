@@ -1,6 +1,5 @@
 Feature: Testing DuoBank API
-
-   Background:
+  Background:
      Given The Base URI is set
 
 

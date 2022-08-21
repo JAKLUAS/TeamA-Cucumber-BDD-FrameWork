@@ -54,7 +54,7 @@ public class Login {
                         "    \"password\":\"Halildikmen1\"\n" +
                         "}").
                 when().log().all().
-                post(String.valueOf(Endpoints.LOGIN));
+               post(String.valueOf(Endpoints.LOGIN));
 
 
     }

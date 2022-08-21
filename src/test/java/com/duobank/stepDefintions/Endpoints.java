@@ -3,9 +3,9 @@ package com.duobank.stepDefintions;
 public enum Endpoints {
 
 
-    REGISTER("/register.php"),
-    LOGIN("/login.php"),
-    MORTGAGE("/getmortagage.php");
+    REGISTER("/register.php"), LOGIN("/login.php");
+
+
 
     final String str;
     Endpoints(String str) {
