@@ -49,9 +49,9 @@ Feature: Testing DuoBank API
          | message      | You have successfully registered. |
 
 
-
-
-
-
+  @api
+  Scenario: sending the request with pojo
+    When  I send  request to the end point using pojo
+    Then  verifying the status code and header.
 
 
