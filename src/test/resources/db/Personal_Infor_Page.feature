@@ -2,7 +2,7 @@
 
 Feature: Data mapping scenarios to the Personal Information Page
 
-  @smoke  @regression
+  @smoke
   Scenario: Data base to UI  end to end
      Given I am on the home page
      When I enter valid credentials.
@@ -14,7 +14,7 @@ Feature: Data mapping scenarios to the Personal Information Page
     When  I pass this information as a list of maps
 
       | firstName | middleName | lastName | email                | dateOfBirth | SSN       | maritalStatus | cellPhone  | homePhone  |
-      | Dominica  | Linet      | Hefferan | lhefferan6@state.com | 10.05.1989  | 541292226 | married       | 9073546524 | 5763643476 |
+      | Dominica  | Linet      | Hefferan | lhefferan8@state.com | 10.05.1989  | 541292226 | married       | 9073546524 | 5763643476 |
 
     Then user should be able click on the next button.
     When I am on the Expenses section
@@ -38,7 +38,7 @@ Feature: Data mapping scenarios to the Personal Information Page
     Then I should be able to apply successfully
     Then Data base should also have correct information
     | firstName | middleName | lastName | email                | dateOfBirth | SSN       | maritalStatus | cellPhone  | homePhone  |
-    | Dominica  | Linet      | Hefferan | lhefferan6@state.com | 10.05.1989  | 541292226 | married       | 9073546524 | 5763643476 |
+    | Dominica  | Linet      | Hefferan | lhefferan8@state.com | 10.05.1989  | 541292226 | married       | 9073546524 | 5763643476 |
 
 
 

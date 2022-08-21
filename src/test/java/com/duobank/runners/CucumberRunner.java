@@ -14,7 +14,9 @@ import org.junit.runner.RunWith;
 
     
 
+
         tags = "@api",
+
 
          //tags ="@parallel",
        // tags = "@crossBrowser",
@@ -29,6 +31,7 @@ import org.junit.runner.RunWith;
                  "rerun:target/failedScenarios.txt"
 
          }
+
 
 
    //,dryRun = true
