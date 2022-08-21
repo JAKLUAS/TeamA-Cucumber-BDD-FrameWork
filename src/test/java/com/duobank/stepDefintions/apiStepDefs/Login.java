@@ -45,17 +45,16 @@ public class Login {
 
     @When("I send a POST request to the endpoint with existing credentials")
     public void i_send_a_post_request_to_the_endpoint_with_existing_credentials() {
-        String email= ("email");
-        String password =  ("password");
+
         response = given().
                 header("Accept", "application/vnd.api+json").
                 contentType(ContentType.JSON).
                 body("{\n" +
-                        "  \"email\" : \""+email+"\",\n" +
-                        "  \"password\" : \""+password+"\" ,\n" +
+                        "    \"email\": \"halil.dkmn@gmail.com\",\n" +
+                        "    \"password\":\"Halildikmen1\"\n" +
                         "}").
                 when().log().all().
-                post(String.valueOf(Endpoints.LOGIN));
+               post(String.valueOf(Endpoints.LOGIN));
 
 
     }
