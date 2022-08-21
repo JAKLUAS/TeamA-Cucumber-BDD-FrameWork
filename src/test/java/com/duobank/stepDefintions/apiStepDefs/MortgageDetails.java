@@ -49,10 +49,7 @@ public class MortgageDetails {
         response.then(). log().all().
                 statusCode(200).
                 header("Content-Type", dataTable.get("Content-Type")).
-                header("Server", dataTable.get("Server")).
-                body("b_firstName",equalTo(dataTable.get("b_firstName"))).
-                body("b_lastName",equalTo(dataTable.get("b_lastName"))).
-                body("b_email",equalTo(dataTable.get("b_email")));
+                header("Server", dataTable.get("Server"));
 
 
     }
