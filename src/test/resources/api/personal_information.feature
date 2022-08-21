@@ -4,7 +4,7 @@ Feature: Testing DuoBank API
      Given The Base URI is set
 
 
-  @dr1
+  @api
   Scenario: Verify User info update with GET request
 
 
@@ -22,7 +22,7 @@ Feature: Testing DuoBank API
 
 
 
-    @dr1
+    @api
     Scenario: Verify the response with Post request
 
       When I send a Post request to "/mortagagedetails.php" endpoint with following

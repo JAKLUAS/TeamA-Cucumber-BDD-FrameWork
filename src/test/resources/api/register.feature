@@ -10,7 +10,7 @@ Feature: Testing DuoBank API
     When  I send a Post request to "/register.php" endpoint with the following values
       | first_name | Halil                  |
       | last_name  | Baba                   |
-      | email      | halodkmn1251@gmail.com |
+      | email      | halodkmn12451@gmail.com |
       | passwords  | halo1234               |
 
     Then The response should contain the following
@@ -23,10 +23,7 @@ Feature: Testing DuoBank API
 
 
   @api
-
-
-
-    Scenario: verify created user info
+  Scenario: verify created user info
 
       When I send a post request to the end point with valid credentials
       Then verify the status code
@@ -52,5 +49,4 @@ Feature: Testing DuoBank API
   Scenario: sending the request with pojo
     When  I send  request to the end point using pojo
     Then  verifying the status code and header.
-
 

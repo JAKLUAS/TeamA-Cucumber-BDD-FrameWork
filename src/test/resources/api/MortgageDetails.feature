@@ -2,7 +2,7 @@ Feature: Testing DuoBank API
   Background:
      Given The Base URI is set
 
-    @test
+    @api
   Scenario: Verify a specific mortgage application details POST a logged in user
 
 
@@ -21,8 +21,3 @@ Feature: Testing DuoBank API
 
 
 
-
-  @Sakina
-    Scenario: Verify a specific mortgage application details for a logged in user
-      When I return a specific mortgage application details
-      Then for a logged in user

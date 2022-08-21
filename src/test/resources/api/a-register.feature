@@ -11,7 +11,7 @@ Feature: Testing register page on DuoBank
     When  I send a Post request to "/register.php" endpoint with the following info
       | first_name | asif         |
       | last_name  | hamz         |
-      | email      | ah4@mail.com |
+      | email      | ah41@mail.com |
       | passwords  | ah1234       |
 
     Then The info should contain the following
