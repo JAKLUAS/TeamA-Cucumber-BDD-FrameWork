@@ -2,7 +2,7 @@ Feature: Testing DuoBank API
   Background:
      Given The Base URI is set
 
-    @api
+
   Scenario: Verify a specific mortgage application details POST a logged in user
 
 
@@ -10,7 +10,7 @@ Feature: Testing DuoBank API
       | id      | 569 |
 
 
-    Then The response should contain the following information
+    Then The response should contain the following informationn
 
       | status-code  | 200                             |
       | Content-Type | application/json; charset=UTF-8 |

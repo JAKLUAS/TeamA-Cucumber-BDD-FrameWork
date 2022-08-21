@@ -36,6 +36,19 @@ Feature: Testing DuoBank Login API
     Then the return response should be less that 1000ms
 
 
-  @test
-  Scenario: Verify Login info update with POST request using Json File
 
+
+  @api
+  Scenario:  Verify Negative test Post login with invalid credentials
+    When I send a Post request to the endpoint with wrong credentials
+    Then The response should contain an error message
+
+
+  Scenario: Verify test Post response payload in Login
+    When I send a post request to the end point with existing email and password
+
+    Then the response payload should have the following body info
+
+      | status-code | 200                              |
+      | success     | 1                                |
+      | message     | You have successfully logged in. |

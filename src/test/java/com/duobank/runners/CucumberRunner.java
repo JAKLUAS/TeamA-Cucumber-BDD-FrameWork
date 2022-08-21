@@ -22,7 +22,7 @@ import org.junit.runner.RunWith;
        // tags = "@crossBrowser",
         features = "src/test/resources",
          glue = "com/duobank/stepDefintions",
-//         stepNotifications = true,
+       //  stepNotifications = true,
 
          plugin = {
                 "pretty",

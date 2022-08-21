@@ -43,8 +43,8 @@ public class MortgageDetails {
                 post(endpoint);
 
     }
-    @Then("The response should contain the following information")
-    public void the_response_should_contain_the_following_information(Map<String, String>dataTable) {
+    @Then("The response should contain the following informationn")
+    public void the_response_should_contain_the_following_informationn(Map<String, String>dataTable) {
 
         response.then(). log().all().
                 statusCode(200).
