@@ -7,6 +7,7 @@ public enum Endpoints {
 
 
 
+
     final String str;
     Endpoints(String str) {
        this.str = str;
