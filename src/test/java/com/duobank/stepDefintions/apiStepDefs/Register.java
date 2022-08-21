@@ -59,7 +59,7 @@ public class Register {
     }
 
 
-// valid credential hard coded
+// valid credential hard coded api
 
     @When("I send a post request to the end point with valid credentials")
     public void i_send_a_post_request_to_the_end_point_with_valid_credentials() {
