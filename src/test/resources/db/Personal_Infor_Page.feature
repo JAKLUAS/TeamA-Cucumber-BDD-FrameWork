@@ -2,7 +2,7 @@
 
 Feature: Data mapping scenarios to the Personal Information Page
 
-  @smoke
+
   Scenario: Data base to UI  end to end
      Given I am on the home page
      When I enter valid credentials.

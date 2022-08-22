@@ -2,7 +2,7 @@ Feature: Database metadata scenarios
 
 
 
-  @smoke  @regression
+  @regression
   Scenario: Verify the column names from mortgage table
     When I send request to select column names from mortgage table
     Then It should be listed the following
@@ -78,18 +78,18 @@ Feature: Database metadata scenarios
       | user_id                       |
       | active                        |
 
-  @smoke  @regression
+  @regression
   Scenario: Verify the title column length of user table
     When I send request to add new title that is longer than expected length of 100
     Then Data should be truncated to the expected length
 
-  @smoke  @regression
+  @regression
   Scenario: Verify the mortgage table for unique id numbers
     When  I send a request to retrieve duplicate id numbers
     Then  The result must be empty
 
 
-  @smoke  @regression
+  @regression
   Scenario: Verify if all emails in mortgage table contains "@"
     When  I retrieve all emails from mortgage table and checked if they are contain "@"
     Then  They all must contain mentioned symbol

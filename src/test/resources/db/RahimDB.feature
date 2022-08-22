@@ -1,6 +1,6 @@
 Feature: User should be able to complete credit report and sign E-consent form
 
-@smoke @regression
+ @regression
   Scenario: Verify the E-consent column names for mortgage table
 
     Given I am on the home page
@@ -37,7 +37,7 @@ Feature: User should be able to complete credit report and sign E-consent form
       | eConsent_declarer_Email     |
 
 
-  @smoke @regression
+   @regression
   Scenario: User should be able to fill out E-consent form using correct information for all 3 fields
     Given I am on the home page
     When I enter valid credentials.
@@ -78,7 +78,7 @@ Feature: User should be able to complete credit report and sign E-consent form
 
 
 
-  @smoke @regression
+  @regression
   Scenario: User should be able to fill out E-consent form using incorrect information for all 3 fields
     Given I am on the home page
     When I enter valid credentials.

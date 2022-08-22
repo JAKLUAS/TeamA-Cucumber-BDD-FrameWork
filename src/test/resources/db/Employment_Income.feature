@@ -45,7 +45,7 @@ Background:
     | John Doe      | Director | Homer | 12242022   | 7600                 |
 
 
-  @smoke @regression
+   @regression
   Scenario: Verify the Employment and Income column names for mortagage table
 
   When I send a request to retrieve colum names for mortagage table
@@ -78,13 +78,13 @@ Background:
     | amount                 |
 
 
-@smoke @regression
+ @regression
   Scenario: Verify the mortagage table for unique IDs
     When  I send a request to retrieve duplicate IDs
     Then  The result should show as empty
 
 
-@smoke @regression
+ @regression
   Scenario: I check the mortgage table for minimum down-payment implemented correctly
     When  I send a request to retrieve minimum down-payment
     Then  The result should not be empty

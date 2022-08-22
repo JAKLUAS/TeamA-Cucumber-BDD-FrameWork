@@ -29,7 +29,7 @@ Feature: Summary Section Data Mapping
     When I input correct information and click Agree
     Then I should be able to click next button
 
-   @smoke @regression
+   @regression
   Scenario: Editing Preapproval Information from UI-DB
 
     Given I am on the Summary section
@@ -44,7 +44,7 @@ Feature: Summary Section Data Mapping
         | ESTIMATED PURCHASE PRICE | DOWN PAYMENT AMOUNT |
         | 350000                   | 90000               |
 
-    @smoke @regression
+    @regression
   Scenario: Editing Econsent information from DB-UI
 
     Given I am on the Summary section
@@ -57,7 +57,7 @@ Feature: Summary Section Data Mapping
     Then I should be able to apply successfully
     And all the information that i edited should be correct
 
-  @smoke @regression
+  @regression
   Scenario: Null values should not be allowed for the Primary Key column
     When I send a request to retrieve null values for Primary Key Column
     Then the result should return empty
