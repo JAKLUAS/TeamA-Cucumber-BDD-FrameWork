@@ -4,7 +4,7 @@ Feature: Testing DuoBank Login API
      Given The Base URI is set
 
 
-  @api
+  @api @smoke
   Scenario: Verify successful login information
     When I send a POST request to the endpoint with existing credentials
     Then I verify the status code
